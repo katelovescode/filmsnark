@@ -5,9 +5,7 @@ import PostPreview from "../components/postPreview"
 export default function Home() {
   return (
     <Layout>
-      <div style={{ color: `purple` }}>
-        This is gonna be the blog page previews
-      </div>
+      <div>This is gonna be the blog page previews</div>
     </Layout>
   )
 }

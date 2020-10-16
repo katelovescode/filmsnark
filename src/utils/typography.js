@@ -1,5 +1,5 @@
 import Typography from "typography"
-import stowLake from "typography-theme-stow-lake"
-const typography = new Typography(stowLake)
+import doelger from "typography-theme-doelger"
+const typography = new Typography(doelger)
 export const { scale, rhythm, options } = typography
 export default typography

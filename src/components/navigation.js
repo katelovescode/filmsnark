@@ -1,5 +1,5 @@
 import React from "react"
 
 export default function Navigation() {
-  return <h1>This is the navigation.</h1>
+  return <h2>This is the navigation.</h2>
 }

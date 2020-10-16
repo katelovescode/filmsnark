@@ -11,21 +11,29 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "generate-mock-data": "node generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "dependencies": {
     "gatsby": "^2.24.67",
     "gatsby-plugin-postcss": "^3.0.3",
+    "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-typography": "^2.5.13",
     "postcss": "^8.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
     "tailwindcss": "^1.9.2",
     "typography": "^0.16.19",
-    "typography-theme-stow-lake": "^0.16.19"
+    "typography-theme-doelger": "^0.16.19"
   },
   "devDependencies": {
+    "faker": "^5.1.0",
+    "json-schema-faker": "^0.5.0-rcv.29",
+    "json-server": "^0.16.2",
     "prettier": "2.1.2"
   },
   "repository": {
