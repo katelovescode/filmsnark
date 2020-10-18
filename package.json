@@ -17,10 +17,14 @@
     "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "dependencies": {
-    "gatsby": "^2.24.67",
+    "dayjs": "^1.9.3",
+    "gatsby": "^2.24.80",
     "gatsby-plugin-postcss": "^3.0.3",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-typography": "^2.5.13",
+    "gatsby-source-custom-api": "^2.1.4",
+    "gatsby-source-filesystem": "^2.3.35",
+    "gatsby-transformer-remark": "^2.8.42",
     "postcss": "^8.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

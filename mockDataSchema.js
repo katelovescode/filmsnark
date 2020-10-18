@@ -1,3 +1,7 @@
+const dayjs = require("dayjs")
+
+let now = dayjs()
+
 const grades = [
   "A+",
   "A",
@@ -23,9 +27,10 @@ const schema = {
   properties: {
     reviews: {
       type: "array",
-      minItems: 13,
-      maxItems: 50,
+      minItems: 1,
+      maxItems: 2,
       items: {
+        name: "review",
         type: "object",
         properties: {
           id: {
@@ -33,36 +38,52 @@ const schema = {
             unique: true,
             faker: "random.uuid",
           },
+          author: {
+            type: "string",
+            default: "Kate",
+          },
           grade: {
             type: "string",
             faker: {
               "random.arrayElement": [grades],
             },
           },
-          rating: {
+          movieTitle: {
+            type: "string",
+            faker: {
+              "lorem.words": 3,
+            },
+          },
+          notableGrossness: {
+            type: "string",
+            faker: {
+              "lorem.paragraphs": 2,
+            },
+          },
+          publishDate: {
+            type: "string",
+            format: "date",
+          },
+          ranking: {
             type: "integer",
             faker: {
               "random.number": { max: 125 },
-            },
-          },
-          series: {
-            type: "string",
-            faker: {
-              "random.arrayElement": [series],
             },
           },
           releaseDate: {
             type: "string",
             format: "date",
           },
-          author: {
-            type: "string",
-            default: "Kate",
-          },
-          notableGrossness: {
+          reviewText: {
             type: "string",
             faker: {
-              "lorem.paragraphs": 2,
+              "lorem.paragraphs": 12,
+            },
+          },
+          series: {
+            type: "string",
+            faker: {
+              "random.arrayElement": [series],
             },
           },
           summary: {
@@ -72,7 +93,19 @@ const schema = {
             },
           },
         },
-        required: ["id", "grade", "rating", "series", "notableGrossness"],
+        required: [
+          "id",
+          "author",
+          "grade",
+          "movieTitle",
+          "notableGrossness",
+          "publishDate",
+          "ranking",
+          "releaseDate",
+          "reviewText",
+          "series",
+          "summary",
+        ],
       },
     },
   },

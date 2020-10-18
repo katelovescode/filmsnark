@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import PostPreview from "../components/postPreview"
+// import PostPreview from "../components/postPreview"
 
 export default function Home() {
   return (
