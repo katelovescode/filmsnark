@@ -5,4 +5,5 @@ module.exports = {
     defaultLineHeights: true,
     standardFontWeights: true,
   },
+  plugins: [require("@tailwindcss/typography")],
 }

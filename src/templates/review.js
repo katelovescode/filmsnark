@@ -6,6 +6,7 @@ export default function Review({ data }) {
   const review = data.reviews
   return (
     <Layout>
+      <div style={{ backgroundImage: "url(" + review.posterImage + ")" }}></div>
       <div>
         {review.series} - {review.movieTitle}
       </div>
@@ -29,6 +30,7 @@ export const query = graphql`
       grade
       movieTitle
       notableGrossness
+      posterImage
       publishDate
       ranking
       releaseDate

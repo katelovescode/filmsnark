@@ -13,10 +13,16 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`,
+        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -34,6 +40,7 @@ module.exports = {
                   grade: String
                   movieTitle: String
                   notableGrossness: String
+                  posterImage: String
                   publishDate: String
                   ranking: Int
                   releaseDate: String
@@ -50,12 +57,6 @@ module.exports = {
           //         lastname: String
           //     `,
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],

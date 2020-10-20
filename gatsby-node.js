@@ -27,6 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
           grade
           movieTitle
           notableGrossness
+          posterImage
           publishDate
           ranking
           releaseDate

@@ -60,6 +60,10 @@ const schema = {
               "lorem.paragraphs": 2,
             },
           },
+          posterImage: {
+            type: "string",
+            default: "https://picsum.photos/800",
+          },
           publishDate: {
             type: "string",
             format: "date",
