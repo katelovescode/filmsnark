@@ -12,18 +12,25 @@ export default function Navigation() {
     }
   `)
   return (
-    <nav className="inline-block">
-      {data.allFile.nodes.map(page => {
-        if (page.name !== "index" && page.name !== "404") {
-          return (
-            <a key={page.name} className="capitalize" href={`/${page.name}`}>
-              {page.name}
-            </a>
-          )
-        } else {
-          return false
-        }
-      })}
+    <nav>
+      <ul className="flex list-none">
+        {data.allFile.nodes.map(page => {
+          if (page.name !== "index" && page.name !== "404") {
+            return (
+              <li key={page.name} className="mr-6">
+                <a
+                  className="text-blue-500 hover:text-blue-800 capitalize"
+                  href={`/${page.name}`}
+                >
+                  {page.name}
+                </a>
+              </li>
+            )
+          } else {
+            return false
+          }
+        })}
+      </ul>
     </nav>
   )
 }

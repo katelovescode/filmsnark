@@ -5,5 +5,20 @@ module.exports = {
     defaultLineHeights: true,
     standardFontWeights: true,
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@ky-is/tailwindcss-plugin-width-height")({
+      variants: ["responsive"],
+    }),
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        highlight: ["Poppins"],
+      },
+      lineHeight: {
+        full: "100%",
+        16: "4rem",
+      },
+    },
+  },
 }
