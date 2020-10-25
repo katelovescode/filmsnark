@@ -7,21 +7,23 @@ export default function Home({ data }) {
   return (
     <Layout>
       <h2 className="mb-4">Latest Reviews</h2>
-      {data.allReviews.nodes.map(review => {
-        return (
-          <PostPreview
-            key={review.movieTitle + review.releaseDate}
-            review={review}
-          />
-        )
-      })}
+      <div className="md:flex md:flex-wrap">
+        {data.allReviews.nodes.map(review => {
+          return (
+            <PostPreview
+              key={review.movieTitle + review.releaseDate}
+              review={review}
+            />
+          )
+        })}
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allReviews {
+    allReviews(sort: { fields: publishDate, order: DESC }, limit: 6) {
       nodes {
         author
         grade

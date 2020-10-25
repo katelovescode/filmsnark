@@ -13,11 +13,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        highlight: ["Poppins"],
+        poppins: ["Poppins"],
+        ptsans: ["PT Sans"],
       },
       lineHeight: {
         full: "100%",
         16: "4rem",
+      },
+      inset: {
+        2: "0.5rem",
+        3: "0.75rem",
+        4: "1rem",
       },
     },
   },

@@ -27,8 +27,8 @@ const schema = {
   properties: {
     reviews: {
       type: "array",
-      minItems: 1,
-      maxItems: 2,
+      minItems: 8,
+      maxItems: 12,
       items: {
         name: "review",
         type: "object",
