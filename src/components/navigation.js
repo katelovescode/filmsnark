@@ -19,7 +19,7 @@ export default function Navigation() {
             return (
               <li key={page.name} className="mr-6">
                 <a
-                  className="text-blue-500 hover:text-blue-800 capitalize"
+                  className="text-paletteNavy hover:text-paletteBeige capitalize"
                   href={`/${page.name}`}
                 >
                   {page.name}

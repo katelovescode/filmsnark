@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "../components/header"
+import Footer from "../components/footer"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -22,6 +23,7 @@ export default function Layout({ children }) {
       </Helmet>
       <Header />
       <div className="m-4">{children}</div>
+      <Footer />
     </div>
   )
 }
