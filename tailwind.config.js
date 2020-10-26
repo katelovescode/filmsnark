@@ -13,8 +13,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        paletteNavy: "#355070",
-        palettePurple: "#6d597a",
+        paletteGold: "#ffbc42",
+        paletteBerry: "#d81159",
         paletteMauve: "#b56576",
         palettePink: "#e56b6f",
         paletteBeige: "#eaac8b",
