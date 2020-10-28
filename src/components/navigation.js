@@ -17,9 +17,9 @@ export default function Navigation() {
         {data.allFile.nodes.map(page => {
           if (page.name !== "index" && page.name !== "404") {
             return (
-              <li key={page.name} className="mr-6">
+              <li key={page.name} className="mr-6 font-bold">
                 <a
-                  className="text-paletteNavy hover:text-paletteBeige capitalize"
+                  className="text-white hover:text-palettePink capitalize"
                   href={`/${page.name}`}
                 >
                   {page.name}
