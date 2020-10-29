@@ -10,12 +10,12 @@ export default function PostPreview({ review }) {
           style={{ backgroundImage: "url(" + review.posterImage + ")" }}
           title={review.movieTitle + " Movie Poster"}
         >
-          <div className="bg-paletteGreen bg-opacity-75 wh-16 font-poppins text-center leading-16 font-bold text-4xl rounded-br">
+          <div className="bg-themeYellow bg-opacity-75 wh-16 font-poppins text-center text-themeBlack leading-16 font-bold text-4xl rounded-br">
             {review.grade}
           </div>
         </div>
         <div className="h-56 border-r border-b border-l border-gray-400 bg-white rounded-b p-4 pb-12 justify-between leading-normal relative">
-          <table className="bg-paletteIvory w-full font-poppins border border-gray-700 -mt-12 mb-2">
+          <table className="bg-themeGray w-full font-poppins border border-gray-700 -mt-12 mb-2">
             <tbody>
               <tr className="text-black text-sm">
                 <td className="pt-2 px-2 text-center">
@@ -23,7 +23,7 @@ export default function PostPreview({ review }) {
                 </td>
                 <td className="pt-2">Better Movie</td>
               </tr>
-              <tr className="text-paletteMaroon text-base font-black">
+              <tr className="text-themePink text-base font-black">
                 <td className="pt-1 px-2 text-center">{review.ranking}</td>
                 <td className="pt-1">{review.movieTitle}</td>
               </tr>
@@ -39,7 +39,7 @@ export default function PostPreview({ review }) {
           <div className="absolute bottom-3 left-4 text-sm">
             {dayjs(review.publishDate).format("MM/DD/YYYY")}
           </div>
-          <button class="absolute bottom-3 right-4 bg-palettePink hover:bg-opacity-75 text-black font-bold py-2 px-4 rounded">
+          <button class="absolute bottom-3 right-4 bg-themeBlue hover:bg-opacity-75 text-themeGray font-bold py-2 px-4 rounded">
             {review.series}
           </button>
         </div>

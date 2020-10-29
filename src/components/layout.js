@@ -22,7 +22,7 @@ export default function Layout({ children }) {
         <meta httpEquiv="content-language" content="en-us" />
       </Helmet>
       <Header />
-      <div className="m-4">{children}</div>
+      <div className="m-4 mx-auto max-w-screen-xl p-4">{children}</div>
       <Footer />
     </div>
   )

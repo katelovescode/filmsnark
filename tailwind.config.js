@@ -13,10 +13,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        paletteMaroon: "#821752",
-        palettePink: "#DE4463",
-        paletteBeige: "#EDC988",
-        paletteIvory: "#F8EFD4",
+        themeGray: "#E7E7E7",
+        themeBlack: "#202020",
+        themeYellow: "#F5E41A",
+        themeOrange: "#FF9149",
+        themePink: "#BE1564",
+        themeBlue: "#1866B3",
       },
       fontFamily: {
         poppins: ["Poppins"],

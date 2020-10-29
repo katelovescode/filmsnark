@@ -19,7 +19,7 @@ export default function Navigation() {
             return (
               <li key={page.name} className="mr-6 font-bold">
                 <a
-                  className="text-white hover:text-palettePink capitalize"
+                  className="text-themePink hover:text-themeBlack capitalize"
                   href={`/${page.name}`}
                 >
                   {page.name}
@@ -30,6 +30,14 @@ export default function Navigation() {
             return false
           }
         })}
+        <li className="mr-6 font-bold">
+          <a
+            className="text-themePink hover:text-themeBlack capitalize"
+            href="/"
+          >
+            Series
+          </a>
+        </li>
       </ul>
     </nav>
   )
