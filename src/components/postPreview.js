@@ -15,20 +15,26 @@ export default function PostPreview({ review }) {
           </div>
         </div>
         <div className="h-56 border-r border-b border-l border-gray-400 bg-white rounded-b p-4 pb-12 justify-between leading-normal relative">
-          <table className="bg-themeGray w-full font-poppins border border-gray-700 -mt-12 mb-2">
+          <table className="bg-themeGray w-full font-poppins border border-gray-700 -mt-20 mb-2">
+            <thead>
+              <tr>
+                <td className="pt-2 px-2 font-bold text-right w-1/6">Rank</td>
+                <td className="pt-2 font-bold">Title</td>
+              </tr>
+            </thead>
             <tbody>
               <tr className="text-black text-sm">
-                <td className="pt-2 px-2 text-center">
+                <td className="pt-2 px-2 text-right w-1/6">
                   {String(parseInt(review.ranking) + 1)}
                 </td>
                 <td className="pt-2">Better Movie</td>
               </tr>
               <tr className="text-themePink text-base font-black">
-                <td className="pt-1 px-2 text-center">{review.ranking}</td>
+                <td className="pt-1 px-2 text-right w-1/6">{review.ranking}</td>
                 <td className="pt-1">{review.movieTitle}</td>
               </tr>
               <tr className="text-black text-sm">
-                <td className="pt-1 pb-2 px-2 text-center">
+                <td className="pt-1 pb-2 px-2 text-right w-1/6">
                   {String(parseInt(review.ranking) - 1)}
                 </td>
                 <td className="pt-1 pb-2">Worse Movie</td>

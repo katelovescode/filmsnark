@@ -19,3 +19,9 @@
     @apply font-ptsans;
   }
 }
+
+@layer components {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }  
+}
