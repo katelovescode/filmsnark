@@ -69,4 +69,4 @@ yarn-error.log
 .yarn-integrity
 
 # Development API
-api/
+src/api/db.json

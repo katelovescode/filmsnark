@@ -112,8 +112,45 @@ const schema = {
         ],
       },
     },
+    pages: {
+      type: "array",
+      minItems: 1,
+      maxItems: 1,
+      items: {
+        name: "page",
+        type: "object",
+        properties: {
+          id: {
+            type: "string",
+            unique: true,
+            faker: "random.uuid",
+          },
+          name: {
+            type: "string",
+            default: "About",
+          },
+          pageCalloutTitle: {
+            type: "string",
+            default: "Notable Grossness",
+          },
+          pageCalloutText: {
+            type: "string",
+            faker: {
+              "lorem.paragraphs": 3,
+            },
+          },
+          pageText: {
+            type: "string",
+            faker: {
+              "lorem.paragraphs": 12,
+            },
+          },
+        },
+        required: ["id", "name", "pageText"],
+      },
+    },
   },
-  required: ["reviews"],
+  required: ["reviews", "pages"],
 }
 
 module.exports = schema

@@ -15,14 +15,14 @@ export default function Layout({ children }) {
     }
   `)
   return (
-    <div className="prose">
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
         <meta httpEquiv="content-language" content="en-us" />
       </Helmet>
       <Header />
-      <div className="m-4 mx-auto max-w-screen-xl p-4">{children}</div>
+      <div>{children}</div>
       <Footer />
     </div>
   )
