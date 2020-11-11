@@ -5,7 +5,7 @@ export default function Footer() {
   const year = today.getFullYear()
 
   return (
-    <footer>
+    <footer className="bg-black text-white p-4">
       &copy;
       {year === 2020 ? year : `2020 - ${year}`}
     </footer>

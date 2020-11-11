@@ -15,14 +15,14 @@ export default function Layout({ children }) {
     }
   `)
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
         <meta httpEquiv="content-language" content="en-us" />
       </Helmet>
       <Header />
-      <div>{children}</div>
+      <main className="flex-grow py-4 px-8">{children}</main>
       <Footer />
     </div>
   )

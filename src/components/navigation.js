@@ -1,7 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 
 export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false)
+  const hamburger = <FontAwesomeIcon icon={faBars} />
   const navigationNodes = useStaticQuery(graphql`
     query {
       pages: allPages {
@@ -26,40 +30,76 @@ export default function Navigation() {
   const seriesList = reviewSeriesList.map(series => {
     return { name: series, slug: series.toLowerCase().split(" ").join("-") }
   })
+
+  const handleEscape = e => {
+    if (e.key === "Esc" || e.key === "Escape") {
+      setIsOpen(false)
+    }
+  }
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const closeMenu = () => {
+    setIsOpen(false)
+  }
+
+  document.addEventListener("keydown", handleEscape)
+
   return (
-    <nav role="navigation">
-      <button className="block h-">Menu</button>
-      <div className="bg-white">
-        {allPages.map(page => {
-          if (page.name !== "index" && page.name !== "404") {
-            return (
-              <a
-                key={`${page.name}`}
-                className="block"
-                href={`/${page.fields.slug}`}
-              >
-                {page.name}
-              </a>
-            )
-          } else {
-            return false
-          }
-        })}
-        <div>Rankings by Series</div>
-        <div>
-          {seriesList.map(series => {
-            return (
-              <a
-                key={`${series.slug}`}
-                className="block"
-                href={`/${series.slug}`}
-              >
-                {series.name}
-              </a>
-            )
-          })}
-        </div>
-      </div>
+    <nav role="navigation" className="text-right relative">
+      <button
+        onClick={toggleMenu}
+        className="relative z-10 bg-themeYellow font-staatliches text-2xl px-4 py-1 mt-1 float-right"
+      >
+        <span className="pr-2">{hamburger}</span> Menu
+      </button>
+      <div className="clear-both h-0" />
+      {isOpen && (
+        <>
+          <button
+            onClick={closeMenu}
+            className="fixed inset-0 w-full h-full cursor-default"
+            tabIndex="-1"
+          />
+          <div className="float-right mr-8 mt-2 triangle-flag" />
+          <div className="clear-both mx-4 border border-l-0 border-r-0 border-t-0 border-b-8 border-themePink" />
+          <div className="menu absolute right-0 w-full">
+            <div className="bg-white py-2 px-4 mx-4 text-left clear-both leading-8 text-lg border border-menuOutlineGray">
+              {allPages.map(page => {
+                if (page.name !== "index" && page.name !== "404") {
+                  return (
+                    <a
+                      key={`${page.name}`}
+                      className="block"
+                      href={`/${page.fields.slug}`}
+                    >
+                      {page.name}
+                    </a>
+                  )
+                } else {
+                  return false
+                }
+              })}
+              <div>Rankings by Series</div>
+              <div>
+                {seriesList.map(series => {
+                  return (
+                    <a
+                      key={`${series.slug}`}
+                      className="block pl-4 leading-8 text-base"
+                      href={`/${series.slug}`}
+                    >
+                      {series.name}
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </nav>
   )
 }
