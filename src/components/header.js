@@ -5,7 +5,10 @@ export default function Header() {
   return (
     <header className="p-4">
       <h1 className="pt-2">
-        <a className="border-b-8 border-themeYellow float-left" href="/">
+        <a
+          className="relative z-20 border-b-8 border-themeYellow float-left"
+          href="/"
+        >
           Film Snark
         </a>
       </h1>
