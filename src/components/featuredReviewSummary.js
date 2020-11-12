@@ -11,7 +11,7 @@ export default function FeaturedReviewSummary({ review }) {
             alt={`${review.movieTitle} Image`}
           />
         </div>
-        <div className="absolute top-0 w-16 h-16 bg-white bg-opacity-75">
+        <div className="absolute top-0 w-16 h-16 bg-white bg-opacity-75 flex">
           <div className="font-black text-4xl m-auto text-center">
             {review.grade}
           </div>
