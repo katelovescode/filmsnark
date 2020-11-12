@@ -22,6 +22,13 @@ module.exports = {
         themePink: "#DF1CB4",
         menuOutlineGray: "#BABABA",
       },
+      width: {
+        80: "20rem",
+        88: "22rem",
+      },
+      margin: {
+        14: "3.5rem",
+      },
     },
   },
 }
