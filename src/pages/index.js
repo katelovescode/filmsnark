@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { filterToLimit } from "../_utils/filterToLimit"
+import { filterToLimit } from "../utils/filterToLimit"
 import FeaturedReviewSummary from "../components/featuredReviewSummary"
 import RelatedReviewSummary from "../components/relatedReviewSummary"
 import RecentReviewSummary from "../components/recentReviewSummary"
