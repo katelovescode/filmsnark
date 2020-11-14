@@ -6,6 +6,7 @@ export default function Review({ data }) {
   // const review = data.reviews
   return (
     <Layout>
+      Review page
       {/* <div style={{ backgroundImage: "url(" + review.posterImage + ")" }}></div>
       <div>
         {review.series} - {review.movieTitle}

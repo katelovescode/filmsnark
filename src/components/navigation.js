@@ -54,10 +54,8 @@ export default function Navigation() {
           <a
             key={`${page.name}`}
             className={`block ${
-              xl
-                ? "xl:inline-block xl:hover:bg-themeBlue xl:hover:bg-opacity-50"
-                : "xl:hidden"
-            } pt-2 pb-1 px-4`}
+              xl ? "xl:inline-block" : "xl:hidden"
+            } hover:bg-themeBlue hover:bg-opacity-50 pt-2 pb-1 px-4`}
             href={`/${page.fields.slug}`}
           >
             {page.name}
@@ -83,7 +81,7 @@ export default function Navigation() {
         {renderPages({ xl: true })}
       </div>
       <button
-        className="z-10 hidden px-4 py-1 mt-1 xl:inline-block text-2xl font-bold xl:hover:bg-themeBlue xl:hover:bg-opacity-50"
+        className="z-10 hidden px-4 py-1 mt-1 xl:inline-block text-2xl font-bold hover:bg-themeBlue hover:bg-opacity-50"
         onClick={toggleMenu}
       >
         Rankings by Series
