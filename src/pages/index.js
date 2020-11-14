@@ -20,17 +20,19 @@ export default function Home({ data }) {
   return (
     <Layout>
       <FeaturedReviewSummary review={featuredReview} />
-      <div className="font-staatliches text-2xl">
+      <div className="font-staatliches text-2xl xl:text-3xl py-8">
         More {featuredReview.series}
       </div>
-      {relatedReviews.map(review => {
-        return (
-          <RelatedReviewSummary
-            key={review.movieTitle + review.publishDate}
-            review={review}
-          />
-        )
-      })}
+      <div className="flex flex-wrap justify-between">
+        {relatedReviews.map(review => {
+          return (
+            <RelatedReviewSummary
+              key={review.movieTitle + review.publishDate}
+              review={review}
+            />
+          )
+        })}
+      </div>
       {/* TODO: If the recent reviews are the same as the related reviews, skip those two and pick later ones */}
       <div>
         {recentReviews.slice(0, 2).map(review => {

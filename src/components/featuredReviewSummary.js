@@ -23,7 +23,7 @@ export default function FeaturedReviewSummary({ review }) {
         </a>
       </div>
 
-      <div className="font-staatliches text-2xl pt-6 pb-1 mb-3 border border-b-2 border-t-0 border-r-0 border-l-0 border-themeLightGray">
+      <div className="font-staatliches text-2xl md:text-3xl xl:text-4xl pt-6 pb-1 mb-3 border border-b-2 border-t-0 border-r-0 border-l-0 border-themeLightGray">
         <a
           href={review.fields.slug}
           className="hover:bg-themeBlue hover:bg-opacity-50"
@@ -31,8 +31,8 @@ export default function FeaturedReviewSummary({ review }) {
           {review.movieTitle}
         </a>
       </div>
-      <div>{review.summary}</div>
-      <div className="py-2 text-sm text-gray-600 italic text-right">
+      <div className="xl:text-lg">{review.summary}</div>
+      <div className="pt-2 text-sm text-gray-600 italic text-right xl:text-base">
         <a
           href={review.fields.slug}
           className="hover:bg-themeBlue hover:bg-opacity-50"
