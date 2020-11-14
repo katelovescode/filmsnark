@@ -63,8 +63,8 @@ export default function Navigation() {
             tabIndex="-1"
           />
           <div className="mr-8 mt-2 ml-auto triangle-flag" />
-          <div className="mx-4 border border-l-0 border-r-0 border-t-0 border-b-8 border-themePink lg:w-80 lg:ml-auto" />
-          <div className="menu absolute right-0 w-full z-10 lg:w-88">
+          <div className="mx-4 border border-l-0 border-r-0 border-t-0 border-b-8 border-themePink md:w-80 md:ml-auto" />
+          <div className="menu absolute right-0 w-full z-10 md:w-88">
             <div className="bg-white mx-4 text-left clear-both leading-8 text-lg border border-menuOutlineGray">
               {allPages.map(page => {
                 if (page.name !== "index" && page.name !== "404") {
