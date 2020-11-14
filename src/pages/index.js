@@ -34,7 +34,8 @@ export default function Home({ data }) {
         })}
       </div>
       {/* TODO: If the recent reviews are the same as the related reviews, skip those two and pick later ones */}
-      <div>
+      <div className="bg-themeLightGray px-6 pb-2 pt-4 mb-8 mt-2">
+        <h3 className="text-2xl pb-4">Recent Snark</h3>
         {recentReviews.slice(0, 2).map(review => {
           return (
             <RecentReviewSummary
