@@ -17,6 +17,15 @@ export default function Home({ data }) {
     2
   )
 
+  // remove the reviews that are already in the related review array
+  const highlightedRecentReviews = filterToLimit(
+    recentReviews,
+    review => {
+      return !relatedReviews.includes(review)
+    },
+    2
+  )
+
   return (
     <Layout>
       <FeaturedReviewSummary review={featuredReview} />
@@ -34,16 +43,19 @@ export default function Home({ data }) {
         })}
       </div>
       {/* TODO: If the recent reviews are the same as the related reviews, skip those two and pick later ones */}
-      <div className="bg-themeLightGray px-6 pb-2 pt-4 mb-8 mt-2">
-        <h3 className="text-2xl pb-4">Recent Snark</h3>
-        {recentReviews.slice(0, 2).map(review => {
-          return (
-            <RecentReviewSummary
-              key={review.movieTitle + review.publishDate}
-              review={review}
-            />
-          )
-        })}
+      <div className="bg-themeLightGray px-6 py-4 mb-8 mt-2">
+        <h3 className="text-2xl xl:text-3xl xl:pb-2">Recent Snark</h3>
+        <div className="flex flex-wrap justify-between">
+          {highlightedRecentReviews.map((review, idx) => {
+            return (
+              <RecentReviewSummary
+                idx={idx}
+                key={review.movieTitle + review.publishDate}
+                review={review}
+              />
+            )
+          })}
+        </div>
       </div>
     </Layout>
   )
