@@ -20,11 +20,13 @@ module.exports = {
         themeYellow: "#DFCC1C",
         themeBlue: "#1CDFD3",
         themePink: "#DF1CB4",
-        menuOutlineGray: "#BABABA",
+        themeDarkGray: "#BABABA",
+        themeLightGray: "#EBEBEB",
       },
       width: {
         80: "20rem",
         88: "22rem",
+        136: "34rem",
       },
       margin: {
         14: "3.5rem",
@@ -35,6 +37,8 @@ module.exports = {
         "1/2": "50%",
         "2/3": "66.666667%",
         "3/4": "75%",
+        "1/10": "10%",
+        banner: "-5%",
       },
       spacing: {
         "1/4": "25%",

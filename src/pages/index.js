@@ -20,6 +20,9 @@ export default function Home({ data }) {
   return (
     <Layout>
       <FeaturedReviewSummary review={featuredReview} />
+      <div className="font-staatliches text-2xl">
+        More {featuredReview.series}
+      </div>
       {relatedReviews.map(review => {
         return (
           <RelatedReviewSummary

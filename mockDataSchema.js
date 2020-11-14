@@ -103,6 +103,7 @@ const schema = {
           "grade",
           "movieTitle",
           "notableGrossness",
+          "posterImage",
           "publishDate",
           "ranking",
           "releaseDate",

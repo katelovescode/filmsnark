@@ -22,7 +22,9 @@ export default function Layout({ children }) {
         <meta httpEquiv="content-language" content="en-us" />
       </Helmet>
       <Header />
-      <main className="flex-grow mt-14 px-8">{children}</main>
+      <main className="flex-grow mt-14 px-8 md:w-136 md:px-0 md:mx-auto">
+        {children}
+      </main>
       <Footer />
     </div>
   )

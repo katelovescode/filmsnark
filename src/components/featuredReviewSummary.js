@@ -16,12 +16,18 @@ export default function FeaturedReviewSummary({ review }) {
             {review.grade}
           </div>
         </div>
-        <div className="absolute bottom-1/4">{review.series}</div>
+        <div className="absolute bottom-1/10 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
+          {review.series}
+        </div>
       </div>
 
-      <div>{review.movieTitle}</div>
+      <div className="font-staatliches text-2xl pt-6 pb-1 mb-3 border border-b-2 border-t-0 border-r-0 border-l-0 border-themeLightGray">
+        {review.movieTitle}
+      </div>
       <div>{review.summary}</div>
-      <div>{review.publishDate}</div>
+      <div className="py-2 text-sm text-gray-600 italic text-right">
+        {review.publishDate}
+      </div>
     </div>
   )
 }
