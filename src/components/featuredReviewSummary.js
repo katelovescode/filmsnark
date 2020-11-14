@@ -2,7 +2,7 @@ import React from "react"
 
 export default function FeaturedReviewSummary({ review }) {
   return (
-    <div>
+    <div className="md:w-136 md:mx-auto">
       <div className="relative">
         <div className="relative pb-2/3">
           <img
