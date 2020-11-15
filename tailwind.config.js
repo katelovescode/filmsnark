@@ -44,6 +44,7 @@ module.exports = {
         "1/10": "10%",
         "-4": "-1rem",
         banner: "-5%",
+        offScreen: "-5000px",
       },
       spacing: {
         "1/4": "25%",
