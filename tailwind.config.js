@@ -22,6 +22,7 @@ module.exports = {
         themePink: "#DF1CB4",
         themeDarkGray: "#BABABA",
         themeLightGray: "#EBEBEB",
+        themeSlateGray: "#2f4f4f",
       },
       width: {
         80: "20rem",

@@ -90,7 +90,9 @@ export default function Navigation() {
         onClick={closeMenu}
         className={`${displayWithMenu} outline-none fixed inset-0 w-full h-full cursor-default`}
         tabIndex="-1"
-      />
+      >
+        <span class="sr-only">Close Menu</span>
+      </button>
       <div className={`${displayWithMenu} mr-8 mt-2 ml-auto triangle-flag`} />
       <div
         className={`${displayWithMenu} mx-4 border border-l-0 border-r-0 border-t-0 border-b-8 border-themePink md:w-80 md:ml-auto`}

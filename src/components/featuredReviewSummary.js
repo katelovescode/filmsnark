@@ -3,8 +3,8 @@ import React from "react"
 export default function FeaturedReviewSummary({ review }) {
   return (
     <div className="md:w-136 md:mx-auto">
-      <div className="relative">
-        <a href={review.fields.slug}>
+      <a href={review.fields.slug}>
+        <div className="relative pb-5">
           <div className="relative pb-2/3">
             <img
               className="absolute h-full w-full object-cover"
@@ -20,25 +20,15 @@ export default function FeaturedReviewSummary({ review }) {
           <div className="absolute bottom-1/10 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
             {review.series}
           </div>
-        </a>
-      </div>
+        </div>
 
-      <div className="font-staatliches text-2xl md:text-3xl xl:text-4xl pt-6 pb-1 mb-3 border border-b-2 border-t-0 border-r-0 border-l-0 border-themeLightGray">
-        <a
-          href={review.fields.slug}
-          className="hover:bg-themeBlue hover:bg-opacity-50"
-        >
+        <div className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 mb-3 border border-b-2 border-t-0 border-r-0 border-l-0 border-themeLightGray hover:bg-themeBlue hover:bg-opacity-50">
           {review.movieTitle}
-        </a>
-      </div>
+        </div>
+      </a>
       <div className="xl:text-lg">{review.summary}</div>
-      <div className="pt-2 text-sm text-gray-600 italic text-right xl:text-base">
-        <a
-          href={review.fields.slug}
-          className="hover:bg-themeBlue hover:bg-opacity-50"
-        >
-          {review.publishDate}
-        </a>
+      <div className="pt-2 text-sm text-themeSlateGray italic text-right xl:text-base">
+        {review.publishDate}
       </div>
     </div>
   )
