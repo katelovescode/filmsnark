@@ -20,7 +20,6 @@ exports.createPages = async ({ graphql, actions }) => {
       allReviews {
         nodes {
           id
-          author
           grade
           movieTitle
           notableGrossness

@@ -12,7 +12,7 @@ export default function Review({ data }) {
         {review.series} - {review.movieTitle}
       </div>
       <div>
-        {review.publishDate} - {review.author}
+        {review.publishDate}
       </div>
       <div>{review.releaseDate}</div>
       <div>{review.grade}</div>
@@ -27,7 +27,6 @@ export default function Review({ data }) {
 // export const query = graphql`
 //   query($slug: String!) {
 //     reviews(fields: { slug: { eq: $slug } }) {
-//       author
 //       grade
 //       movieTitle
 //       notableGrossness

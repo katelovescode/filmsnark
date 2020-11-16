@@ -36,7 +36,6 @@ module.exports = {
         schemas: {
           reviews: `
                   id: String
-                  author: String
                   grade: String
                   movieTitle: String
                   notableGrossness: String

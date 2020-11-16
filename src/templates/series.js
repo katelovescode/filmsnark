@@ -14,7 +14,6 @@ export default function Series({ data }) {
 // export const query = graphql`
 //   query($slug: String!) {
 //     reviews(fields: { slug: { eq: $slug } }) {
-//       author
 //       grade
 //       movieTitle
 //       notableGrossness

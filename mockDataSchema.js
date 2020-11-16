@@ -38,10 +38,6 @@ const schema = {
             unique: true,
             faker: "random.uuid",
           },
-          author: {
-            type: "string",
-            default: "Kate",
-          },
           grade: {
             type: "string",
             faker: {
@@ -99,7 +95,6 @@ const schema = {
         },
         required: [
           "id",
-          "author",
           "grade",
           "movieTitle",
           "notableGrossness",
