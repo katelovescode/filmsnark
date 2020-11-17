@@ -17,7 +17,7 @@ export default function FeaturedReviewSummary({ review }) {
               {review.grade}
             </div>
           </div>
-          <div className="absolute bottom-1/10 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
+          <div className="absolute bottom-3/20 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
             {review.series}
           </div>
         </div>

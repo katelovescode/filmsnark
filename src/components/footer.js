@@ -12,6 +12,11 @@ export default function Footer() {
         <a href="" target="_blank">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
+        <div className="mt-2 ml-2">
+          <a href="https://www.buymeacoffee.com/filmsnark">
+            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=filmsnark&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" />
+          </a>
+        </div>
       </div>
       <div className="mx-4 text-base text-black w-2/3 text-right">
         <form
