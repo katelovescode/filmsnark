@@ -8,7 +8,7 @@ export default function FeaturedReviewSummary({ review }) {
           <div className="relative pb-2/3">
             <img
               className="absolute h-full w-full object-cover"
-              src={review.posterImage}
+              src={review.posterImage.file.url}
               alt={`${review.movieTitle} Image`}
             />
           </div>
@@ -18,7 +18,7 @@ export default function FeaturedReviewSummary({ review }) {
             </div>
           </div>
           <div className="absolute bottom-3/20 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
-            {review.series}
+            {review.series.name}
           </div>
         </div>
 
@@ -26,7 +26,7 @@ export default function FeaturedReviewSummary({ review }) {
           {review.movieTitle}
         </div>
       </a>
-      <div className="xl:text-lg">{review.summary}</div>
+      <div className="xl:text-lg">{review.summary.summary}</div>
       <div className="pt-2 text-sm text-themeSlateGray italic text-right xl:text-base">
         {review.publishDate}
       </div>

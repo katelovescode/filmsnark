@@ -2,46 +2,80 @@ const path = require(`path`)
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
-  const slugValue =
-    node.internal.type === "reviews"
-      ? `${node.publishDate} ${node.movieTitle}`
-      : node.name || ""
-  createNodeField({
-    node,
-    name: `slug`,
-    value: slugValue.toLowerCase().split(" ").join("-"),
-  })
+  if (node.internal.type === "ContentfulReview") {
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `${node.publishDate} ${node.movieTitle}`
+        .toLowerCase()
+        .split(" ")
+        .join("-"),
+    })
+  } else if (
+    node.internal.type === "ContentfulPage" ||
+    node.internal.type === "ContentfulSeries"
+  ) {
+    createNodeField({
+      node,
+      name: `slug`,
+      value: node.name.toLowerCase().split(" ").join("-"),
+    })
+  }
 }
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const pages = await graphql(`
     query {
-      allReviews {
+      allContentfulReview(sort: { fields: publishDate }) {
         nodes {
           id
           grade
           movieTitle
-          notableGrossness
-          posterImage
+          notableGrossness {
+            notableGrossness
+          }
+          posterImage {
+            file {
+              url
+            }
+          }
           publishDate
           ranking
           releaseDate
-          reviewText
-          series
-          summary
+          reviewText {
+            reviewText
+          }
+          series {
+            name
+          }
+          summary {
+            summary
+          }
           fields {
             slug
           }
         }
       }
-      allPages {
+      allContentfulPage {
         nodes {
           id
           name
-          pageCalloutText
+          pageCalloutText {
+            pageCalloutText
+          }
           pageCalloutTitle
-          pageText
+          pageText {
+            pageText
+          }
+          fields {
+            slug
+          }
+        }
+      }
+      allContentfulSeries {
+        nodes {
+          name
           fields {
             slug
           }
@@ -49,9 +83,9 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  const allReviews = pages.data.allReviews.nodes
-  const allPages = pages.data.allPages.nodes
-  const reviewSeriesList = [...new Set(allReviews.map(review => review.series))]
+  const allReviews = pages.data.allContentfulReview.nodes
+  const allPages = pages.data.allContentfulPage.nodes
+  const allSeries = pages.data.allContentfulSeries.nodes
   allReviews.forEach(review => {
     createPage({
       path: review.fields.slug,
@@ -64,9 +98,9 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/page.js`),
     })
   })
-  reviewSeriesList.forEach(series => {
+  allSeries.forEach(series => {
     createPage({
-      path: series.toLowerCase().split(" ").join("-"),
+      path: series.fields.slug,
       component: path.resolve(`./src/templates/series.js`),
     })
   })

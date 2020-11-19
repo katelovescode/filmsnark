@@ -57,8 +57,20 @@ const schema = {
             },
           },
           posterImage: {
-            type: "string",
-            default: "https://picsum.photos/800",
+            type: "object",
+            properties: {
+              file: {
+                type: "object",
+                properties: {
+                  url: {
+                    type: "string",
+                    default: "https://picsum.photos/800",
+                  },
+                },
+                requires: ["url"],
+              },
+            },
+            required: ["file"],
           },
           publishDate: {
             type: "string",
@@ -81,10 +93,16 @@ const schema = {
             },
           },
           series: {
-            type: "string",
-            faker: {
-              "random.arrayElement": [series],
+            type: "object",
+            properties: {
+              name: {
+                type: "string",
+                faker: {
+                  "random.arrayElement": [series],
+                },
+              },
             },
+            required: ["name"],
           },
           summary: {
             type: "string",

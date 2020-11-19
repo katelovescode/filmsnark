@@ -9,7 +9,7 @@ export default function RelatedReviewSummary({ review }) {
       <div className="relative pb-7/12 mb-4">
         <img
           className="-top-4 p-1 absolute h-full w-full object-cover"
-          src={review.posterImage}
+          src={review.posterImage.file.url}
           alt={`${review.movieTitle} Image`}
         />
       </div>

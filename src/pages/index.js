@@ -12,7 +12,7 @@ export default function Home({ data }) {
   const relatedReviews = filterToLimit(
     recentReviews,
     review => {
-      return review.series === featuredReview.series
+      return review.series.name === featuredReview.series.name
     },
     2
   )
@@ -30,7 +30,7 @@ export default function Home({ data }) {
     <Layout>
       <FeaturedReviewSummary review={featuredReview} />
       <div className="font-staatliches text-2xl xl:text-3xl py-8">
-        More {featuredReview.series}
+        More {featuredReview.series.name}
       </div>
       <div className="flex flex-wrap justify-between">
         {relatedReviews.map(review => {
@@ -63,32 +63,48 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    featuredReview: allReviews(
+    featuredReview: allContentfulReview(
       sort: { fields: publishDate, order: DESC }
       limit: 1
     ) {
       nodes {
         grade
         movieTitle
-        posterImage
+        posterImage {
+          file {
+            url
+          }
+        }
         publishDate
-        series
-        summary
+        series {
+          name
+        }
+        summary {
+          summary
+        }
         fields {
           slug
         }
       }
     }
-    recentReviews: allReviews(
+    recentReviews: allContentfulReview(
       sort: { fields: publishDate, order: DESC }
       skip: 1
     ) {
       nodes {
         movieTitle
-        posterImage
+        posterImage {
+          file {
+            url
+          }
+        }
         publishDate
-        series
-        summary
+        series {
+          name
+        }
+        summary {
+          summary
+        }
         fields {
           slug
         }

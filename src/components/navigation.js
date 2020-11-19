@@ -8,7 +8,7 @@ export default function Navigation() {
   const hamburger = <FontAwesomeIcon icon={faBars} />
   const navigationNodes = useStaticQuery(graphql`
     query {
-      pages: allPages {
+      pages: allContentfulPage {
         nodes {
           name
           fields {
@@ -16,19 +16,20 @@ export default function Navigation() {
           }
         }
       }
-      reviews: allReviews {
+      series: allContentfulSeries {
         nodes {
-          series
+          name
         }
       }
     }
   `)
   const allPages = navigationNodes.pages.nodes
-  const reviewSeriesList = [
-    ...new Set(navigationNodes.reviews.nodes.map(review => review.series)),
-  ]
-  const seriesList = reviewSeriesList.map(series => {
-    return { name: series, slug: series.toLowerCase().split(" ").join("-") }
+  const allSeries = navigationNodes.series.nodes
+  const seriesList = allSeries.map(series => {
+    return {
+      name: series.name,
+      slug: series.name.toLowerCase().split(" ").join("-"),
+    }
   })
 
   const handleEscape = e => {
