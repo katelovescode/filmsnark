@@ -21,6 +21,9 @@ export default function Footer() {
           <FontAwesomeIcon icon={faInstagram} />
         </a>
         <div className="mt-2 ml-2">
+          <div className="text-lg mb-2 mt-4 pt-2 border border-white border-b-0 border-l-0 border-r-0">
+            Like my content?
+          </div>
           <a href="https://www.buymeacoffee.com/filmsnark">
             <img
               className="inline-block"
