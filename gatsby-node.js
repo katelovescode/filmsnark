@@ -86,22 +86,29 @@ exports.createPages = async ({ graphql, actions }) => {
   const allReviews = pages.data.allContentfulReview.nodes
   const allPages = pages.data.allContentfulPage.nodes
   const allSeries = pages.data.allContentfulSeries.nodes
+
+  // Create home page
+  createPage({
+    path: "/",
+    component: require.resolve(`./src/templates/Home.js`),
+  })
+
   allReviews.forEach(review => {
     createPage({
       path: review.fields.slug,
-      component: path.resolve(`./src/templates/review.js`),
+      component: path.resolve(`./src/templates/Review.js`),
     })
   })
   allPages.forEach(page => {
     createPage({
       path: page.fields.slug,
-      component: path.resolve(`./src/templates/page.js`),
+      component: path.resolve(`./src/templates/Page.js`),
     })
   })
   allSeries.forEach(series => {
     createPage({
       path: series.fields.slug,
-      component: path.resolve(`./src/templates/series.js`),
+      component: path.resolve(`./src/templates/Series.js`),
     })
   })
 }

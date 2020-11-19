@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import { filterToLimit } from "../utils/filterToLimit"
-import FeaturedReviewSummary from "../components/featuredReviewSummary"
-import RelatedReviewSummary from "../components/relatedReviewSummary"
-import RecentReviewSummary from "../components/recentReviewSummary"
+import FeaturedReviewSummary from "../components/FeaturedReviewSummary"
+import RelatedReviewSummary from "../components/RelatedReviewSummary"
+import RecentReviewSummary from "../components/RecentReviewSummary"
 
 export default function Home({ data }) {
   const featuredReview = data.featuredReview.nodes[0]

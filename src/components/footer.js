@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
@@ -6,10 +6,18 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white text-2xl py-4 px-2 flex justify-between">
       <div className="w-1/3">
-        <a href="https://twitter.com/thefilmsnark" target="_blank">
+        <a
+          href="https://twitter.com/thefilmsnark"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faTwitter} className="mx-4" />
         </a>
-        <a href="https://www.instagram.com/thefilmsnark/" target="_blank">
+        <a
+          href="https://www.instagram.com/thefilmsnark/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
         <div className="mt-2 ml-2">
