@@ -4,8 +4,8 @@ import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white text-2xl py-4 px-2 flex justify-between">
-      <div className="w-1/3">
+    <footer className="bg-black text-white text-2xl py-4 px-2 flex flex-wrap md:flex-no-wrap justify-between">
+      <div className="w-full md:w-1/3 mb-8 text-center md:text-left">
         <a
           href="https://twitter.com/thefilmsnark"
           target="_blank"
@@ -22,11 +22,14 @@ export default function Footer() {
         </a>
         <div className="mt-2 ml-2">
           <a href="https://www.buymeacoffee.com/filmsnark">
-            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=filmsnark&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" />
+            <img
+              className="inline-block"
+              src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=filmsnark&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"
+            />
           </a>
         </div>
       </div>
-      <div className="mx-4 text-base text-black w-2/3 text-right">
+      <div className="mx-4 text-base text-black w-full md:w-2/3 text-center md:text-right">
         <form
           action="https://filmsnark.us14.list-manage.com/subscribe/post?u=615eaf78f9db28465a27a7163&amp;id=1d0cc54f91"
           method="post"
@@ -44,7 +47,7 @@ export default function Footer() {
               type="email"
               // value=""
               name="EMAIL"
-              className="email mt-2 rounded px-2"
+              className="email mt-2 rounded px-4 py-2"
               id="mce-EMAIL"
               placeholder="email address"
               required
@@ -63,7 +66,7 @@ export default function Footer() {
                 value="Subscribe"
                 name="subscribe"
                 id="mc-embedded-subscribe"
-                className="button rounded bg-themeYellow px-2 mt-3"
+                className="button rounded bg-themeYellow px-4 py-2 mt-3"
               />
             </div>
           </div>
