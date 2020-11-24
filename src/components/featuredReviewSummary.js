@@ -22,12 +22,12 @@ export default function FeaturedReviewSummary({ review }) {
           </div>
         </div>
 
-        <div className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 mb-3 border border-b-2 border-t-0 border-r-0 border-l-0 border-themeLightGray hover:bg-themeBlue hover:bg-opacity-50">
+        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 mb-3 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray hover:text-themePink">
           {review.movieTitle}
-        </div>
+        </h2>
       </a>
       <div className="xl:text-lg">{review.summary.summary}</div>
-      <div className="pt-2 text-sm text-themeSlateGray italic text-right xl:text-base">
+      <div className="pt-2 text-sm text-themeDarkGray italic text-right xl:text-base">
         {review.publishDate}
       </div>
     </div>

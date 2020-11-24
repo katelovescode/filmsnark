@@ -56,7 +56,7 @@ export default function MailchimpSubscribeForm() {
         type="email"
         id="email"
         className="inline-block p-2"
-        placeholder="enter your email address"
+        placeholder="enter your email"
         onChange={event => setEmail(event.target.value)}
       />
       <input

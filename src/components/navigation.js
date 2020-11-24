@@ -56,7 +56,7 @@ export default function Navigation() {
             key={`${page.name}`}
             className={`block ${
               xl ? "xl:inline-block" : "xl:hidden"
-            } hover:bg-themeBlue hover:bg-opacity-50 pt-2 pb-1 px-4`}
+            } hover:text-themePink pt-2 pb-1 px-4`}
             href={`/${page.fields.slug}`}
           >
             {page.name}
@@ -82,7 +82,7 @@ export default function Navigation() {
         {renderPages({ xl: true })}
       </div>
       <button
-        className="z-10 hidden px-4 py-1 mt-1 xl:inline-block text-2xl font-bold hover:bg-themeBlue hover:bg-opacity-50"
+        className="z-10 hidden px-4 py-1 mt-1 xl:inline-block text-2xl font-bold hover:text-themePink"
         onClick={toggleMenu}
       >
         Rankings by Series
@@ -94,22 +94,20 @@ export default function Navigation() {
       >
         <span className="sr-only">Close Menu</span>
       </button>
-      <div className={`${displayWithMenu} mr-8 mt-2 ml-auto triangle-flag`} />
-      <div
-        className={`${displayWithMenu} mx-4 border border-l-0 border-r-0 border-t-0 border-b-8 border-themePink md:w-80 md:ml-auto`}
-      />
       <div
         className={`${displayWithMenu} menu absolute right-0 w-full z-10 md:w-88`}
       >
-        <div className="bg-white mx-4 text-left clear-both leading-8 text-lg border border-menuOutlineGray">
+        <div className="bg-white text-left clear-both leading-8 text-lg border border-themeMediumGray">
           <div className="block xl:hidden">{renderPages()}</div>
-          <div className="py-1 px-4 xl:hidden">Rankings by Series</div>
+          <div className="text-sm text-themeDarkGray mb-2 text-right border border-themeMediumGray border-b-1 border-t-0 border-l-0 border-r-0 py-1 px-4 mx-2 xl:hidden">
+            Rankings by Series
+          </div>
           <div className="pb-2 xl:pt-2">
             {seriesList.map(series => {
               return (
                 <a
                   key={`${series.slug}`}
-                  className="block pl-8 leading-8 text-base hover:bg-themeBlue hover:bg-opacity-50"
+                  className="block pl-8 leading-8 hover:text-themePink"
                   href={`/${series.slug}`}
                 >
                   {series.name}

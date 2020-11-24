@@ -17,12 +17,12 @@ module.exports = {
         montserrat: ["Montserrat"],
       },
       colors: {
-        themeYellow: "#DFCC1C",
+        themeYellow: "#F4E024",
         themeBlue: "#1CDFD3",
-        themePink: "#DF1CB4",
-        themeDarkGray: "#BABABA",
-        themeLightGray: "#EBEBEB",
-        themeSlateGray: "#2f4f4f",
+        themePink: "#DA09AC",
+        themeDarkGray: "#4E4E4E",
+        themeMediumGray: "#BABABA",
+        themeLightGray: "#F3F3F3",
       },
       width: {
         80: "20rem",
