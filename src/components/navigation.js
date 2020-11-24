@@ -92,7 +92,7 @@ export default function Navigation() {
         className={`${displayWithMenu} outline-none fixed inset-0 w-full h-full cursor-default`}
         tabIndex="-1"
       >
-        <span class="sr-only">Close Menu</span>
+        <span className="sr-only">Close Menu</span>
       </button>
       <div className={`${displayWithMenu} mr-8 mt-2 ml-auto triangle-flag`} />
       <div

@@ -41,7 +41,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
           publishDate
-          ranking
           releaseDate
           reviewText {
             reviewText
