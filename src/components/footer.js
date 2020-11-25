@@ -7,7 +7,7 @@ import buy from "../assets/buy.svg"
 export default function Footer() {
   return (
     <footer className="bg-black text-white text-2xl py-4 px-2 flex flex-wrap md:flex-no-wrap justify-between">
-      <div className="w-full md:w-1/3 mb-8 text-center md:text-left">
+      <div className="w-full md:w-3/5 mb-8 text-center md:text-left">
         <a
           href="https://twitter.com/thefilmsnark"
           target="_blank"

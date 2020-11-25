@@ -74,7 +74,9 @@ export default function Navigation() {
     <nav role="navigation">
       <button
         onClick={toggleMenu}
-        className="z-10 bg-themeYellow font-staatliches text-2xl px-4 py-1 mt-1 xl:hidden"
+        className={`z-10 border border-themePink ${
+          isOpen ? "bg-themePink text-white" : "bg-white text-themePink"
+        } font-staatliches text-2xl px-4 py-1 mt-1 xl:hidden`}
       >
         <span className="pr-2">{hamburger}</span> Menu
       </button>
@@ -82,7 +84,11 @@ export default function Navigation() {
         {renderPages({ xl: true })}
       </div>
       <button
-        className="z-10 hidden px-4 py-1 mt-1 xl:inline-block text-2xl font-bold hover:text-themePink"
+        className={`z-10 hidden  ${
+          isOpen
+            ? "bg-themePink text-white hover:text-white"
+            : "hover:text-themePink"
+        } px-4 py-1 mt-1 xl:inline-block text-2xl font-bold`}
         onClick={toggleMenu}
       >
         Rankings by Series
@@ -95,7 +101,7 @@ export default function Navigation() {
         <span className="sr-only">Close Menu</span>
       </button>
       <div
-        className={`${displayWithMenu} menu absolute right-0 w-full z-10 md:w-88`}
+        className={`${displayWithMenu} menu absolute -mt-1 right-0 w-full z-10 md:w-88`}
       >
         <div className="bg-white text-left clear-both leading-8 text-lg border border-themeMediumGray">
           <div className="block xl:hidden">{renderPages()}</div>
