@@ -12,7 +12,7 @@ export default function Home({ data }) {
   const relatedReviews = filterToLimit(
     recentReviews,
     review => {
-      return review.series.name === featuredReview.series.name
+      return review.series[0].name === featuredReview.series[0].name
     },
     2
   )
@@ -30,13 +30,13 @@ export default function Home({ data }) {
     <Layout>
       <FeaturedReviewSummary review={featuredReview} />
       <div className="font-staatliches text-2xl xl:text-3xl py-8">
-        More {featuredReview.series.name}
+        More {featuredReview.series[0].name}
       </div>
       <div className="flex flex-wrap justify-between">
         {relatedReviews.map(review => {
           return (
             <RelatedReviewSummary
-              key={review.movieTitle + review.publishDate}
+              key={review.movieTitle + review.updatedAt}
               review={review}
             />
           )
@@ -50,7 +50,7 @@ export default function Home({ data }) {
             return (
               <RecentReviewSummary
                 idx={idx}
-                key={review.movieTitle + review.publishDate}
+                key={review.movieTitle + review.updatedAt}
                 review={review}
               />
             )
@@ -63,19 +63,16 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    featuredReview: allContentfulReview(
-      sort: { fields: publishDate, order: DESC }
-      limit: 1
-    ) {
+    featuredReview: allContentfulReview(limit: 1) {
       nodes {
         grade
         movieTitle
+        updatedAt
         posterImage {
           file {
             url
           }
         }
-        publishDate
         series {
           name
         }
@@ -87,18 +84,15 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview(
-      sort: { fields: publishDate, order: DESC }
-      skip: 1
-    ) {
+    recentReviews: allContentfulReview(skip: 1) {
       nodes {
         movieTitle
+        updatedAt
         posterImage {
           file {
             url
           }
         }
-        publishDate
         series {
           name
         }

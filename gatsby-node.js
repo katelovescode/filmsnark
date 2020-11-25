@@ -1,4 +1,5 @@
 const path = require(`path`)
+let dayjs = require("dayjs")
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -6,7 +7,7 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `${node.publishDate} ${node.movieTitle}`
+      value: `${dayjs(node.updatedAt).format("YYYY-MM-DD")} ${node.movieTitle}`
         .toLowerCase()
         .split(" ")
         .join("-"),
@@ -27,11 +28,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const pages = await graphql(`
     query {
-      allContentfulReview(sort: { fields: publishDate }) {
+      allContentfulReview {
         nodes {
           id
           grade
           movieTitle
+          updatedAt
           notableGrossness {
             notableGrossness
           }
@@ -40,7 +42,6 @@ exports.createPages = async ({ graphql, actions }) => {
               url
             }
           }
-          publishDate
           releaseDate
           reviewText {
             reviewText
@@ -96,18 +97,21 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: review.fields.slug,
       component: path.resolve(`./src/templates/Review.js`),
+      context: { slug: review.fields.slug },
     })
   })
   allPages.forEach(page => {
     createPage({
       path: page.fields.slug,
       component: path.resolve(`./src/templates/Page.js`),
+      context: { slug: page.fields.slug },
     })
   })
   allSeries.forEach(series => {
     createPage({
       path: series.fields.slug,
       component: path.resolve(`./src/templates/Series.js`),
+      context: { slug: series.fields.slug },
     })
   })
 }

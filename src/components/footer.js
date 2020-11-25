@@ -13,7 +13,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <span class="sr-only">@TheFilmSnark on Twitter</span>
+          <span className="sr-only">@TheFilmSnark on Twitter</span>
           <FontAwesomeIcon icon={faTwitter} className="mx-4" />
         </a>
         <a
@@ -21,7 +21,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <span class="sr-only">@TheFilmSnark on Instagram</span>
+          <span className="sr-only">@TheFilmSnark on Instagram</span>
           <FontAwesomeIcon icon={faInstagram} />
         </a>
         <div className="mt-2 ml-2">

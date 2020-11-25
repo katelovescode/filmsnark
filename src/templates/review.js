@@ -11,7 +11,6 @@ export default function Review({ data }) {
       <div>
         {review.series} - {review.movieTitle}
       </div>
-      <div>{review.publishDate}</div>
       <div>{review.releaseDate}</div>
       <div>{review.grade}</div>
       <div>{review.ranking}</div>
@@ -35,7 +34,6 @@ export const query = graphql`
           url
         }
       }
-      publishDate
       releaseDate
       reviewText {
         reviewText

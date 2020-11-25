@@ -1,6 +1,10 @@
 import React from "react"
+import dayjs from "dayjs"
 
 export default function RecentReviewSummary({ review, idx }) {
+  var advancedFormat = require("dayjs/plugin/advancedFormat")
+  dayjs.extend(advancedFormat)
+  review.updatedAt = dayjs(review.updatedAt).format("MMMM Do, YYYY")
   return (
     <div className={`${idx === 0 ? "mt-6" : "mt-8"} md:mt-4 w-full md:w-23/50`}>
       <div className="relative pb-7/12 mb-4">
@@ -15,7 +19,7 @@ export default function RecentReviewSummary({ review, idx }) {
       </h4>
       <div>{review.summary.summary}</div>
       <div className="text-themeDarkGray text-sm italic text-right pt-4">
-        {review.publishDate}
+        {review.updatedAt}
       </div>
     </div>
   )

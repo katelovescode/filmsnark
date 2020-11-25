@@ -18,7 +18,6 @@ export default function Series({ data }) {
 //       movieTitle
 //       notableGrossness
 //       posterImage
-//       publishDate
 //       ranking
 //       releaseDate
 //       reviewText

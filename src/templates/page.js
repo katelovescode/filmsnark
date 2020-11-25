@@ -18,7 +18,6 @@ export default function Page({ data }) {
 //       movieTitle
 //       notableGrossness
 //       posterImage
-//       publishDate
 //       ranking
 //       releaseDate
 //       reviewText

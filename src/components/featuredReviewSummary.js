@@ -1,6 +1,10 @@
 import React from "react"
+import dayjs from "dayjs"
 
 export default function FeaturedReviewSummary({ review }) {
+  var advancedFormat = require("dayjs/plugin/advancedFormat")
+  dayjs.extend(advancedFormat)
+  review.updatedAt = dayjs(review.updatedAt).format("MMMM Do, YYYY")
   return (
     <div className="md:w-136 md:mx-auto">
       <a href={review.fields.slug}>
@@ -18,7 +22,7 @@ export default function FeaturedReviewSummary({ review }) {
             </div>
           </div>
           <div className="absolute bottom-3/20 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
-            {review.series.name}
+            {review.series[0].name}
           </div>
         </div>
 
@@ -28,7 +32,7 @@ export default function FeaturedReviewSummary({ review }) {
       </a>
       <div className="xl:text-lg">{review.summary.summary}</div>
       <div className="pt-2 text-sm text-themeDarkGray italic text-right xl:text-base">
-        {review.publishDate}
+        {review.updatedAt}
       </div>
     </div>
   )
