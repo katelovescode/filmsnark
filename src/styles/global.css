@@ -17,6 +17,9 @@
   h2 {
     @apply text-xl;
   }
+  p {
+    @apply my-4;
+  }
 }
 
 @layer components {
