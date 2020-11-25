@@ -8,6 +8,7 @@ export default function Review({ data }) {
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
   review.updatedAt = dayjs(review.updatedAt).format("MMMM Do, YYYY")
+  review.releaseDate = dayjs(review.releaseDate).format("MM/DD/YYYY")
   return (
     <Layout>
       <div className="md:w-136 md:mx-auto">
@@ -29,12 +30,12 @@ export default function Review({ data }) {
           </div>
         </div>
 
-        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 mb-3 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray hover:text-themePink">
-          {review.movieTitle} ({review.releaseDate})
+        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray hover:text-themePink pb-2">
+          <div>{review.movieTitle}</div>
+          <div className="font-montserrat text-base italic text-right">
+            Released: {review.releaseDate}
+          </div>
         </h2>
-        <div className="pt-2 text-sm text-themeDarkGray mb-2 italic text-right xl:text-base">
-          {review.updatedAt}
-        </div>
         <div
           className="xl:text-lg"
           dangerouslySetInnerHTML={{
@@ -52,11 +53,13 @@ export default function Review({ data }) {
           />
         </div>
         <div
-          className="pb-8"
           dangerouslySetInnerHTML={{
             __html: review.reviewText.childMarkdownRemark.html,
           }}
         />
+        <div className="text-sm text-themeDarkGray mb-2 italic text-right xl:text-base pb-8">
+          {review.updatedAt}
+        </div>
       </div>
     </Layout>
   )
