@@ -1,14 +1,43 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
+import { filterToLimit } from "../utils/filterToLimit"
 import dayjs from "dayjs"
+import RecentReviews from "../components/RecentReviews"
+import RelatedReviews from "../components/RelatedReviews"
 
 export default function Review({ data }) {
-  const review = data.contentfulReview
+  const review = data.thisReview
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
   review.updatedAt = dayjs(review.updatedAt).format("MMMM Do, YYYY")
-  review.releaseDate = dayjs(review.releaseDate).format("MM/DD/YYYY")
+  review.releaseDate = dayjs(review.releaseDate).format("MMMM Do, YYYY")
+
+  const recentReviews = data.recentReviews.nodes
+
+  const relatedReviews = filterToLimit(
+    recentReviews,
+    recentReview => {
+      return (
+        recentReview.series[0].name === review.series[0].name &&
+        review.fields.slug !== recentReview.fields.slug
+      )
+    },
+    2
+  )
+
+  // remove the reviews that are already in the related review array
+  const highlightedRecentReviews = filterToLimit(
+    recentReviews,
+    recentReview => {
+      return (
+        !relatedReviews.includes(recentReview) &&
+        review.fields.slug !== recentReview.fields.slug
+      )
+    },
+    2
+  )
+
   return (
     <Layout>
       <div className="md:w-136 md:mx-auto">
@@ -30,7 +59,7 @@ export default function Review({ data }) {
           </div>
         </div>
 
-        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray hover:text-themePink pb-2">
+        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray pb-2">
           <div>{review.movieTitle}</div>
           <div className="font-montserrat text-base italic text-right">
             Released: {review.releaseDate}
@@ -61,13 +90,15 @@ export default function Review({ data }) {
           {review.updatedAt}
         </div>
       </div>
+      <RelatedReviews reviews={relatedReviews} />
+      <RecentReviews reviews={highlightedRecentReviews} />
     </Layout>
   )
 }
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulReview(fields: { slug: { eq: $slug } }) {
+    thisReview: contentfulReview(fields: { slug: { eq: $slug } }) {
       grade
       movieTitle
       updatedAt
@@ -93,6 +124,29 @@ export const query = graphql`
       summary {
         childMarkdownRemark {
           html
+        }
+      }
+      fields {
+        slug
+      }
+    }
+    recentReviews: allContentfulReview {
+      nodes {
+        movieTitle
+        updatedAt
+        posterImage {
+          file {
+            url
+          }
+        }
+        series {
+          name
+        }
+        summary {
+          summary
+        }
+        fields {
+          slug
         }
       }
     }

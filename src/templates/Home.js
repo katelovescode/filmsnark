@@ -3,8 +3,8 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import { filterToLimit } from "../utils/filterToLimit"
 import FeaturedReviewSummary from "../components/FeaturedReviewSummary"
-import RelatedReviewSummary from "../components/RelatedReviewSummary"
-import RecentReviewSummary from "../components/RecentReviewSummary"
+import RelatedReviews from "../components/RelatedReviews"
+import RecentReviews from "../components/RecentReviews"
 
 export default function Home({ data }) {
   const featuredReview = data.featuredReview.nodes[0]
@@ -32,31 +32,9 @@ export default function Home({ data }) {
       <div className="font-staatliches text-2xl xl:text-3xl py-8">
         More {featuredReview.series[0].name}
       </div>
-      <div className="flex flex-wrap justify-between">
-        {relatedReviews.map(review => {
-          return (
-            <RelatedReviewSummary
-              key={review.movieTitle + review.updatedAt}
-              review={review}
-            />
-          )
-        })}
-      </div>
+      <RelatedReviews reviews={relatedReviews} />
       {/* TODO: If the recent reviews are the same as the related reviews, skip those two and pick later ones */}
-      <div className="bg-themeLightGray px-6 py-4 mb-8 mt-2">
-        <h3 className="text-2xl xl:text-3xl xl:pb-2">Recent Snark</h3>
-        <div className="flex flex-wrap justify-between">
-          {highlightedRecentReviews.map((review, idx) => {
-            return (
-              <RecentReviewSummary
-                idx={idx}
-                key={review.movieTitle + review.updatedAt}
-                review={review}
-              />
-            )
-          })}
-        </div>
-      </div>
+      <RecentReviews reviews={highlightedRecentReviews} />
     </Layout>
   )
 }
