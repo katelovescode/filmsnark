@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
+import RecentReviews from "../components/RecentReviews"
 
 export default function Page({ data }) {
   const page = data.thisPage
@@ -22,6 +23,7 @@ export default function Page({ data }) {
           }}
         />
       </div>
+      <RecentReviews reviews={data.recentReviews.nodes} />
     </Layout>
   )
 }
@@ -42,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview {
+    recentReviews: allContentfulReview(limit: 2) {
       nodes {
         movieTitle
         updatedAt
