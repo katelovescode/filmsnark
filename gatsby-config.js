@@ -17,6 +17,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {
+      resolve: `gatsby-plugin-purgecss`,
+      options: { tailwind: true },
+    },
+    {
       resolve: "gatsby-plugin-html-attributes",
       options: {
         lang: "en",
