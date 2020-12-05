@@ -5,6 +5,7 @@ module.exports = {
     defaultLineHeights: true,
     standardFontWeights: true,
   },
+  purge: false,
   plugins: [
     require("@ky-is/tailwindcss-plugin-width-height")({
       variants: ["responsive"],

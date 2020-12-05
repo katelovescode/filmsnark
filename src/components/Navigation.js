@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
@@ -67,8 +67,9 @@ export default function Navigation() {
       }
     })
   }
-
-  document.addEventListener("keydown", handleEscape)
+  useEffect(() => {
+    document.addEventListener("keydown", handleEscape)
+  })
 
   return (
     <nav role="navigation">
