@@ -184,15 +184,17 @@ export default function SeriesRankingTable({ reviews }) {
           </div>
           <div>
             {sortedReviews.map(review => (
-              <div className="shadow my-4 flex items-center">
-                <div className="w-18 h-16 bg-themeYellow bg-opacity-75 font-black text-4xl px-4 py-3 flex-none">
-                  {review.grade}
+              <a href={review.fields.slug}>
+                <div className="shadow my-4 flex items-center">
+                  <div className="w-18 h-16 bg-themeYellow bg-opacity-75 font-black text-4xl px-4 py-3 flex-none">
+                    {review.grade}
+                  </div>
+                  <div className="text-right w-full px-3.5 py-1">
+                    {review.movieTitle} (
+                    {dayjs(review.releaseDate).format("YYYY")})
+                  </div>
                 </div>
-                <div className="text-right w-full px-3.5 py-1">
-                  {review.movieTitle} (
-                  {dayjs(review.releaseDate).format("YYYY")})
-                </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
