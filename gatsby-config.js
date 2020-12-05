@@ -33,5 +33,13 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Staatliches", "Montserrat"],
+        },
+      },
+    },
   ],
 }
