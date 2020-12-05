@@ -25,6 +25,7 @@ module.exports = {
         themeLightGray: "#F3F3F3",
       },
       width: {
+        18: "4.5rem",
         80: "20rem",
         88: "22rem",
         136: "34rem",
