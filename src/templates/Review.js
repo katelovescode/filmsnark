@@ -5,13 +5,12 @@ import { filterToLimit } from "../utils/filterToLimit"
 import dayjs from "dayjs"
 import RecentReviews from "../components/RecentReviews"
 import RelatedReviews from "../components/RelatedReviews"
+import ReviewRankingTable from "../components/ReviewRankingTable"
 
 export default function Review({ data }) {
   const review = data.thisReview
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
-  review.updatedAt = dayjs(review.updatedAt).format("MMMM Do, YYYY")
-  review.releaseDate = dayjs(review.releaseDate).format("MMMM Do, YYYY")
 
   const allReviews = data.allReviews.nodes
 
@@ -40,6 +39,8 @@ export default function Review({ data }) {
 
   const rankedSeriesFilms = data.rankedSeriesFilms.nodes[0].rankedFilms
 
+  rankedSeriesFilms.forEach((rankedFilm, idx) => (rankedFilm.rank = idx + 1))
+
   const thisFilmIndex = rankedSeriesFilms.findIndex(
     singleReview => singleReview.fields.slug === review.fields.slug
   )
@@ -47,7 +48,7 @@ export default function Review({ data }) {
   const threeRankedFilms = () => {
     if (thisFilmIndex === 0) {
       return rankedSeriesFilms.slice(0, 3)
-    } else if (thisFilmIndex === rankedSeriesFilms.size - 1) {
+    } else if (thisFilmIndex === rankedSeriesFilms.length - 1) {
       return rankedSeriesFilms.slice(thisFilmIndex - 2)
     } else if (thisFilmIndex === -1) {
       return false
@@ -60,7 +61,7 @@ export default function Review({ data }) {
     firstParagraph,
     ...rest
   ] = review.reviewText.childMarkdownRemark.html.split("</p>")
-  const remainingParagraphs = rest.join()
+  const remainingParagraphs = rest.join("")
 
   return (
     <Layout>
@@ -86,7 +87,7 @@ export default function Review({ data }) {
         <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray pb-2">
           <div>{review.movieTitle}</div>
           <div className="font-montserrat text-base italic text-right">
-            Released: {review.releaseDate}
+            Released: {dayjs(review.releaseDate).format("MMMM Do, YYYY")}
           </div>
         </h2>
         <div
@@ -96,32 +97,35 @@ export default function Review({ data }) {
           }}
         />
         <div>
-          {threeRankedFilms().map(rankedFilm => {
-            return <div>{rankedFilm.movieTitle}</div>
-          })}
+          <ReviewRankingTable
+            reviews={threeRankedFilms()}
+            thisReviewTitle={review.movieTitle}
+          />
         </div>
         <div
           dangerouslySetInnerHTML={{
             __html: firstParagraph,
           }}
         />
-        <div className="bg-themeLightGray px-6 py-4 mb-8 mt-4">
-          <h3 className="font-montserrat font-bold text-lg border border-b-4 border-r-0 border-l-0 border-t-0 border-themeYellow mb-4 pb-1 w-full">
-            Notable Grossness
-          </h3>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: review.notableGrossness.childMarkdownRemark.html,
-            }}
-          />
-        </div>
+        {review.notableGrossness && (
+          <div className="bg-themeLightGray px-6 py-4 mb-8 mt-4">
+            <h3 className="font-montserrat font-bold text-lg border border-b-4 border-r-0 border-l-0 border-t-0 border-themeYellow mb-4 pb-1 w-full">
+              Notable Grossness
+            </h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: review.notableGrossness.childMarkdownRemark.html,
+              }}
+            />
+          </div>
+        )}
         <div
           dangerouslySetInnerHTML={{
             __html: remainingParagraphs,
           }}
         />
         <div className="text-sm text-themeDarkGray mb-2 italic text-right xl:text-base pb-8">
-          {review.updatedAt}
+          {dayjs(review.updatedAt).format("MMMM Do, YYYY")}
         </div>
       </div>
       <RelatedReviews reviews={relatedReviews} />
@@ -190,10 +194,12 @@ export const query = graphql`
           ... on ContentfulReview {
             id
             movieTitle
-            fields {
-              slug
-            }
           }
+          fields {
+            slug
+          }
+          releaseDate
+          grade
         }
       }
     }

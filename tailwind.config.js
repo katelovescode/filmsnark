@@ -57,4 +57,9 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      fontStyle: ["group-hover"],
+    },
+  },
 }

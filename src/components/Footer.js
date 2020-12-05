@@ -7,7 +7,7 @@ import buy from "../assets/buy.svg"
 export default function Footer() {
   return (
     <footer className="bg-black text-white text-2xl py-4 px-2 flex flex-wrap md:flex-no-wrap justify-between">
-      <div className="w-full md:w-3/5 mb-8 text-center md:text-left">
+      <div className="w-full md:w-2/5 mb-8 text-center md:text-left">
         <a
           href="https://twitter.com/thefilmsnark"
           target="_blank"
@@ -24,7 +24,7 @@ export default function Footer() {
           <span className="sr-only">@TheFilmSnark on Instagram</span>
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <div className="mt-2 ml-2">
+        <div>
           <div className="text-lg mb-2 mt-4 pt-2 border border-white border-b-0 border-l-0 border-r-0">
             Like my content?
           </div>
@@ -34,14 +34,14 @@ export default function Footer() {
             rel="noreferrer"
           >
             <img
-              className="inline-block bg-themeBlue p-2 w-2/3 lg:w-1/4"
+              className="inline-block bg-themeBlue p-2 w-2/3 lg:w-1/2"
               src={buy}
               alt="Buy me a coffee!"
             />
           </a>
         </div>
       </div>
-      <div className="mx-4 text-base text-black w-full md:w-2/3 text-center md:text-right">
+      <div className="mx-4 text-base text-black w-full md:w-2/5 text-center md:text-right">
         <MailchimpSubscribeForm />
       </div>
     </footer>
