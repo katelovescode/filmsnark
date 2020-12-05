@@ -33,7 +33,6 @@ export default function Home({ data }) {
         More {featuredReview.series[0].name}
       </div>
       <RelatedReviews reviews={relatedReviews} />
-      {/* TODO: If the recent reviews are the same as the related reviews, skip those two and pick later ones */}
       <RecentReviews reviews={highlightedRecentReviews} />
     </Layout>
   )

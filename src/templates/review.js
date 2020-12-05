@@ -13,14 +13,14 @@ export default function Review({ data }) {
   review.updatedAt = dayjs(review.updatedAt).format("MMMM Do, YYYY")
   review.releaseDate = dayjs(review.releaseDate).format("MMMM Do, YYYY")
 
-  const recentReviews = data.recentReviews.nodes
+  const allReviews = data.allReviews.nodes
 
   const relatedReviews = filterToLimit(
-    recentReviews,
-    recentReview => {
+    allReviews,
+    singleReview => {
       return (
-        recentReview.series[0].name === review.series[0].name &&
-        review.fields.slug !== recentReview.fields.slug
+        singleReview.series[0].name === review.series[0].name &&
+        review.fields.slug !== singleReview.fields.slug
       )
     },
     2
@@ -28,15 +28,39 @@ export default function Review({ data }) {
 
   // remove the reviews that are already in the related review array
   const highlightedRecentReviews = filterToLimit(
-    recentReviews,
-    recentReview => {
+    allReviews,
+    singleReview => {
       return (
-        !relatedReviews.includes(recentReview) &&
-        review.fields.slug !== recentReview.fields.slug
+        !relatedReviews.includes(singleReview) &&
+        review.fields.slug !== singleReview.fields.slug
       )
     },
     2
   )
+
+  const rankedSeriesFilms = data.rankedSeriesFilms.nodes[0].rankedFilms
+
+  const thisFilmIndex = rankedSeriesFilms.findIndex(
+    singleReview => singleReview.fields.slug === review.fields.slug
+  )
+
+  const threeRankedFilms = () => {
+    if (thisFilmIndex === 0) {
+      return rankedSeriesFilms.slice(0, 3)
+    } else if (thisFilmIndex === rankedSeriesFilms.size - 1) {
+      return rankedSeriesFilms.slice(thisFilmIndex - 2)
+    } else if (thisFilmIndex === -1) {
+      return false
+    } else {
+      return rankedSeriesFilms.slice(thisFilmIndex - 1, thisFilmIndex + 2)
+    }
+  }
+
+  const [
+    firstParagraph,
+    ...rest
+  ] = review.reviewText.childMarkdownRemark.html.split("</p>")
+  const remainingParagraphs = rest.join()
 
   return (
     <Layout>
@@ -70,7 +94,17 @@ export default function Review({ data }) {
           dangerouslySetInnerHTML={{
             __html: review.summary.childMarkdownRemark.html,
           }}
-        ></div>
+        />
+        <div>
+          {threeRankedFilms().map(rankedFilm => {
+            return <div>{rankedFilm.movieTitle}</div>
+          })}
+        </div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: firstParagraph,
+          }}
+        />
         <div className="bg-themeLightGray px-6 py-4 mb-8 mt-4">
           <h3 className="font-montserrat font-bold text-lg border border-b-4 border-r-0 border-l-0 border-t-0 border-themeYellow mb-4 pb-1 w-full">
             Notable Grossness
@@ -83,7 +117,7 @@ export default function Review({ data }) {
         </div>
         <div
           dangerouslySetInnerHTML={{
-            __html: review.reviewText.childMarkdownRemark.html,
+            __html: remainingParagraphs,
           }}
         />
         <div className="text-sm text-themeDarkGray mb-2 italic text-right xl:text-base pb-8">
@@ -97,7 +131,7 @@ export default function Review({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $series: String!) {
     thisReview: contentfulReview(fields: { slug: { eq: $slug } }) {
       grade
       movieTitle
@@ -130,7 +164,7 @@ export const query = graphql`
         slug
       }
     }
-    recentReviews: allContentfulReview {
+    allReviews: allContentfulReview {
       nodes {
         movieTitle
         updatedAt
@@ -147,6 +181,19 @@ export const query = graphql`
         }
         fields {
           slug
+        }
+      }
+    }
+    rankedSeriesFilms: allContentfulSeries(filter: { name: { eq: $series } }) {
+      nodes {
+        rankedFilms {
+          ... on ContentfulReview {
+            id
+            movieTitle
+            fields {
+              slug
+            }
+          }
         }
       }
     }

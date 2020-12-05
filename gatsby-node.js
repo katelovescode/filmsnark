@@ -97,7 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: review.fields.slug,
       component: path.resolve(`./src/templates/Review.js`),
-      context: { slug: review.fields.slug },
+      context: { slug: review.fields.slug, series: review.series[0].name },
     })
   })
   allPages.forEach(page => {
