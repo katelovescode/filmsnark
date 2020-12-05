@@ -111,7 +111,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: series.fields.slug,
       component: path.resolve(`./src/templates/Series.js`),
-      context: { slug: series.fields.slug },
+      context: { slug: series.fields.slug, series: series.name },
     })
   })
 }
