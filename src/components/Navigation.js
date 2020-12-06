@@ -53,7 +53,7 @@ export default function Navigation() {
       if (page.name !== "index" && page.name !== "404") {
         return (
           <a
-            key={`${page.name}`}
+            key={page.name}
             className={`block ${
               xl ? "xl:inline-block" : "xl:hidden"
             } hover:text-themePink pt-2 pb-1 px-4`}
@@ -113,7 +113,7 @@ export default function Navigation() {
             {seriesList.map(series => {
               return (
                 <a
-                  key={`${series.slug}`}
+                  key={series.slug}
                   className="block pl-8 leading-8 hover:text-themePink"
                   href={`/${series.slug}`}
                 >

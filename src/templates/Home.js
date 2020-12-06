@@ -46,6 +46,7 @@ export const query = graphql`
         movieTitle
         updatedAt
         posterImage {
+          description
           file {
             url
           }
@@ -66,6 +67,7 @@ export const query = graphql`
         movieTitle
         updatedAt
         posterImage {
+          description
           file {
             url
           }

@@ -11,7 +11,8 @@ export default function RecentReviewSummary({ review, idx }) {
           <img
             className="absolute h-full w-full object-cover"
             src={review.posterImage.file.url}
-            alt={`${review.movieTitle} Film Info`}
+            alt={review.posterImage.description}
+            title={review.posterImage.description}
           />
         </div>
         <h4 className="text-xl border border-t-0 border-l-0 border-r-0 border-b-1 border-themeMediumGray pb-1 mb-2 xl:text-2xl">

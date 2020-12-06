@@ -13,7 +13,8 @@ export default function FeaturedReviewSummary({ review }) {
             <img
               className="absolute h-full w-full object-cover"
               src={review.posterImage.file.url}
-              alt={`${review.movieTitle} Image`}
+              alt={review.posterImage.description}
+              title={review.posterImage.description}
             />
           </div>
           <div className="absolute top-0 w-16 h-16 bg-white bg-opacity-75 flex">
