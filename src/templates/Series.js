@@ -30,10 +30,12 @@ export default function Series({ data }) {
 
 export const query = graphql`
   query($series: String!) {
-    allReviews: allContentfulReview {
+    allReviews: allContentfulReview(
+      sort: { fields: publishDate, order: DESC }
+    ) {
       nodes {
         movieTitle
-        updatedAt
+        publishDate
         posterImage {
           description
           file {
@@ -57,9 +59,9 @@ export const query = graphql`
           ... on ContentfulReview {
             id
             movieTitle
-          }
-          fields {
-            slug
+            fields {
+              slug
+            }
           }
           releaseDate
           grade

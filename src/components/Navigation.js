@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "gatsby"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -52,15 +53,15 @@ export default function Navigation() {
     return allPages.map(page => {
       if (page.name !== "index" && page.name !== "404") {
         return (
-          <a
+          <Link
             key={page.name}
             className={`block ${
               xl ? "xl:inline-block" : "xl:hidden"
             } hover:text-themePink pt-2 pb-1 px-4`}
-            href={`/${page.fields.slug}`}
+            to={`/${page.fields.slug}`}
           >
             {page.name}
-          </a>
+          </Link>
         )
       } else {
         return false
@@ -112,13 +113,13 @@ export default function Navigation() {
           <div className="pb-2 xl:pt-2">
             {seriesList.map(series => {
               return (
-                <a
+                <Link
                   key={series.slug}
                   className="block pl-8 leading-8 hover:text-themePink"
-                  href={`/${series.slug}`}
+                  to={`/${series.slug}`}
                 >
                   {series.name}
-                </a>
+                </Link>
               )
             })}
           </div>

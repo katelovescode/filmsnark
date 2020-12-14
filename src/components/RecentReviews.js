@@ -10,7 +10,7 @@ export default function RecentReviews({ reviews }) {
           return (
             <RecentReviewSummary
               idx={idx}
-              key={review.movieTitle + review.updatedAt}
+              key={review.movieTitle + review.publishDate}
               review={review}
             />
           )

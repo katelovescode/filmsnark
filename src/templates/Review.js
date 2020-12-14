@@ -126,7 +126,7 @@ export default function Review({ data }) {
           }}
         />
         <div className="text-sm text-themeDarkGray mb-2 italic text-right xl:text-base pb-8">
-          {dayjs(review.updatedAt).format("MMMM Do, YYYY")}
+          {dayjs(review.publishDate).format("MMMM Do, YYYY")}
         </div>
       </div>
       <RelatedReviews reviews={relatedReviews} />
@@ -140,7 +140,7 @@ export const query = graphql`
     thisReview: contentfulReview(fields: { slug: { eq: $slug } }) {
       grade
       movieTitle
-      updatedAt
+      publishDate
       series {
         name
       }
@@ -170,10 +170,12 @@ export const query = graphql`
         slug
       }
     }
-    allReviews: allContentfulReview {
+    allReviews: allContentfulReview(
+      sort: { fields: publishDate, order: DESC }
+    ) {
       nodes {
         movieTitle
-        updatedAt
+        publishDate
         posterImage {
           description
           file {

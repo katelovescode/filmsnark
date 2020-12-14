@@ -55,10 +55,13 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview(limit: 2) {
+    recentReviews: allContentfulReview(
+      sort: { fields: publishDate, order: DESC }
+      limit: 2
+    ) {
       nodes {
         movieTitle
-        updatedAt
+        publishDate
         posterImage {
           description
           file {

@@ -1,12 +1,13 @@
 import React from "react"
 import dayjs from "dayjs"
+import { Link } from "gatsby"
 
 export default function RecentReviewSummary({ review, idx }) {
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
   return (
     <div className={`${idx === 0 ? "mt-6" : "mt-8"} md:mt-4 w-full md:w-23/50`}>
-      <a href={review.fields.slug}>
+      <Link to={`/${review.fields.slug}`}>
         <div className="relative pb-7/12 mb-4">
           <img
             className="absolute h-full w-full object-cover"
@@ -20,9 +21,9 @@ export default function RecentReviewSummary({ review, idx }) {
         </h4>
         <div>{review.summary.summary}</div>
         <div className="text-themeDarkGray text-sm italic text-right pt-4">
-          {dayjs(review.updatedAt).format("MMMM Do, YYYY")}
+          {dayjs(review.publishDate).format("MMMM Do, YYYY")}
         </div>
-      </a>
+      </Link>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSortUp, faSortDown, faSort } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "gatsby"
 import dayjs from "dayjs"
 
 export default function SeriesRankingTable({ reviews }) {
@@ -41,7 +42,6 @@ export default function SeriesRankingTable({ reviews }) {
     if (!sortConfig) {
       return <FontAwesomeIcon icon={faSort} className="ml-2" />
     }
-    console.log("sortConfig:", sortConfig)
     if (sortConfig.key === name) {
       if (sortConfig.direction === "ascending") {
         return <FontAwesomeIcon icon={faSortUp} className="ml-2" />
@@ -104,39 +104,39 @@ export default function SeriesRankingTable({ reviews }) {
                 }
               >
                 <td className="table-cell group-hover:bg-themeLightGray">
-                  <a
+                  <Link
                     className="block p-2.5 focus:outline-none"
-                    href={review.fields.slug}
+                    to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
                     {review.rank}
-                  </a>
+                  </Link>
                 </td>
                 <td className="table-cell group-hover:bg-themeLightGray">
-                  <a
+                  <Link
                     className="block p-2.5 focus:outline-none"
-                    href={review.fields.slug}
+                    to={`/${review.fields.slug}`}
                   >
                     {review.movieTitle}
-                  </a>
+                  </Link>
                 </td>
                 <td className="hidden md:table-cell group-hover:bg-themeLightGray">
-                  <a
+                  <Link
                     className="block p-2.5 focus:outline-none"
-                    href={review.fields.slug}
+                    to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
                     {dayjs(review.releaseDate).format("YYYY")}
-                  </a>
+                  </Link>
                 </td>
                 <td className="table-cell group-hover:bg-themeLightGray">
-                  <a
+                  <Link
                     className="block p-2.5 focus:outline-none"
-                    href={review.fields.slug}
+                    to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
                     {review.grade}
-                  </a>
+                  </Link>
                 </td>
               </tr>
             ))}
@@ -184,7 +184,8 @@ export default function SeriesRankingTable({ reviews }) {
           </div>
           <div>
             {sortedReviews.map(review => (
-              <a href={review.fields.slug}>
+              <Link key={review.fields.slug} to={`/${review.fields.slug}`}>
+                {console.log("slug", review.fields.slug)}
                 <div className="shadow my-4 flex items-center">
                   <div className="w-18 h-16 bg-themeYellow bg-opacity-75 font-black text-4xl px-4 py-3 flex-none">
                     {review.grade}
@@ -194,7 +195,7 @@ export default function SeriesRankingTable({ reviews }) {
                     {dayjs(review.releaseDate).format("YYYY")})
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

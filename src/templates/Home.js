@@ -40,11 +40,14 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    featuredReview: allContentfulReview(limit: 1) {
+    featuredReview: allContentfulReview(
+      sort: { fields: publishDate, order: DESC }
+      limit: 1
+    ) {
       nodes {
         grade
         movieTitle
-        updatedAt
+        publishDate
         posterImage {
           description
           file {
@@ -62,10 +65,13 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview(skip: 1) {
+    recentReviews: allContentfulReview(
+      sort: { fields: publishDate, order: DESC }
+      skip: 1
+    ) {
       nodes {
         movieTitle
-        updatedAt
+        publishDate
         posterImage {
           description
           file {

@@ -1,5 +1,6 @@
 import React from "react"
 import dayjs from "dayjs"
+import { Link } from "gatsby"
 
 export default function ReviewRankingTable({ reviews, thisReviewTitle }) {
   return (
@@ -24,39 +25,39 @@ export default function ReviewRankingTable({ reviews, thisReviewTitle }) {
               } border border-themeMediumGray border-b-1 border-r-0 border-l-0 border-t-0 text-sm group cursor-pointer`}
             >
               <td className="table-cell group-hover:bg-themeLightGray">
-                <a
+                <Link
                   className="block py-2.5 px-2 focus:outline-none"
-                  href={review.fields.slug}
+                  to={`/${review.fields.slug}`}
                   tabIndex="-1"
                 >
                   {review.rank}
-                </a>
+                </Link>
               </td>
               <td className="table-cell group-hover:bg-themeLightGray">
-                <a
+                <Link
                   className="block py-2.5 px-2 focus:outline-none"
-                  href={review.fields.slug}
+                  to={`/${review.fields.slug}`}
                 >
                   {review.movieTitle}
-                </a>
+                </Link>
               </td>
               <td className="hidden md:table-cell group-hover:bg-themeLightGray">
-                <a
+                <Link
                   className="block py-2.5 px-2 focus:outline-none"
-                  href={review.fields.slug}
+                  to={`/${review.fields.slug}`}
                   tabIndex="-1"
                 >
                   {dayjs(review.releaseDate).format("YYYY")}
-                </a>
+                </Link>
               </td>
               <td className="table-cell group-hover:bg-themeLightGray">
-                <a
+                <Link
                   className="block py-2.5 px-2 focus:outline-none"
-                  href={review.fields.slug}
+                  to={`/${review.fields.slug}`}
                   tabIndex="-1"
                 >
                   {review.grade}
-                </a>
+                </Link>
               </td>
             </tr>
           ))}
