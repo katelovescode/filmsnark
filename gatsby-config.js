@@ -13,6 +13,7 @@ module.exports = {
     title: `Film Snark`,
   },
   plugins: [
+    `gatsby-plugin-percy`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
