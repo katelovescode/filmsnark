@@ -29,7 +29,7 @@ export default function Home({ data }) {
   return (
     <Layout>
       <FeaturedReviewSummary review={featuredReview} />
-      <div className="font-staatliches text-2xl xl:text-3xl py-8">
+      <div className="py-8 text-2xl font-staatliches xl:text-3xl">
         More {featuredReview.series[0].name}
       </div>
       <RelatedReviews reviews={relatedReviews} />
@@ -41,13 +41,13 @@ export default function Home({ data }) {
 export const query = graphql`
   {
     featuredReview: allContentfulReview(
-      sort: { fields: publishDate, order: DESC }
+      sort: { fields: createdAt, order: DESC }
       limit: 1
     ) {
       nodes {
         grade
         movieTitle
-        publishDate
+        createdAt
         posterImage {
           description
           file {
@@ -58,7 +58,9 @@ export const query = graphql`
           name
         }
         summary {
-          summary
+          childMarkdownRemark {
+            html
+          }
         }
         fields {
           slug
@@ -66,12 +68,12 @@ export const query = graphql`
       }
     }
     recentReviews: allContentfulReview(
-      sort: { fields: publishDate, order: DESC }
+      sort: { fields: createdAt, order: DESC }
       skip: 1
     ) {
       nodes {
         movieTitle
-        publishDate
+        createdAt
         posterImage {
           description
           file {
@@ -82,7 +84,9 @@ export const query = graphql`
           name
         }
         summary {
-          summary
+          childMarkdownRemark {
+            html
+          }
         }
         fields {
           slug

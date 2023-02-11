@@ -69,25 +69,25 @@ export default function Review({ data }) {
         <div className="relative pb-5">
           <div className="relative pb-2/3">
             <img
-              className="absolute h-full w-full object-cover"
+              className="absolute object-cover w-full h-full"
               src={review.posterImage.file.url}
               alt={review.posterImage.description}
               title={review.posterImage.description}
             />
           </div>
-          <div className="absolute top-0 w-16 h-16 bg-white bg-opacity-75 flex">
-            <div className="font-black text-4xl m-auto text-center">
+          <div className="absolute top-0 flex w-16 h-16 bg-white bg-opacity-75">
+            <div className="m-auto text-4xl font-black text-center">
               {review.grade}
             </div>
           </div>
-          <div className="absolute bottom-3/20 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
+          <div className="absolute px-2 py-1 font-bold shadow bottom-3/20 right-banner bg-themeBlue">
             {review.series[0].name}
           </div>
         </div>
 
-        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray pb-2">
+        <h2 className="py-1 pb-2 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b-1 border-themeMediumGray">
           <div>{review.movieTitle}</div>
-          <div className="font-montserrat text-base italic text-right">
+          <div className="text-base italic text-right font-montserrat">
             Released: {dayjs(review.releaseDate).format("MMMM Do, YYYY")}
           </div>
         </h2>
@@ -109,8 +109,8 @@ export default function Review({ data }) {
           }}
         />
         {review.notableGrossness && (
-          <div className="bg-themeLightGray px-6 py-4 mb-8 mt-4">
-            <h3 className="font-montserrat font-bold text-lg border border-b-4 border-r-0 border-l-0 border-t-0 border-themeYellow mb-4 pb-1 w-full">
+          <div className="px-6 py-4 mt-4 mb-8 bg-themeLightGray">
+            <h3 className="w-full pb-1 mb-4 text-lg font-bold border border-t-0 border-b-4 border-l-0 border-r-0 font-montserrat border-themeYellow">
               Notable Grossness
             </h3>
             <div
@@ -125,8 +125,8 @@ export default function Review({ data }) {
             __html: remainingParagraphs,
           }}
         />
-        <div className="text-sm text-themeDarkGray mb-2 italic text-right xl:text-base pb-8">
-          {dayjs(review.publishDate).format("MMMM Do, YYYY")}
+        <div className="pb-8 mb-2 text-sm italic text-right text-themeDarkGray xl:text-base">
+          {dayjs(review.createdAt).format("MMMM Do, YYYY")}
         </div>
       </div>
       <RelatedReviews reviews={relatedReviews} />
@@ -140,7 +140,7 @@ export const query = graphql`
     thisReview: contentfulReview(fields: { slug: { eq: $slug } }) {
       grade
       movieTitle
-      publishDate
+      createdAt
       series {
         name
       }
@@ -170,12 +170,10 @@ export const query = graphql`
         slug
       }
     }
-    allReviews: allContentfulReview(
-      sort: { fields: publishDate, order: DESC }
-    ) {
+    allReviews: allContentfulReview(sort: { fields: createdAt, order: DESC }) {
       nodes {
         movieTitle
-        publishDate
+        createdAt
         posterImage {
           description
           file {
@@ -186,7 +184,9 @@ export const query = graphql`
           name
         }
         summary {
-          summary
+          childMarkdownRemark {
+            html
+          }
         }
         fields {
           slug

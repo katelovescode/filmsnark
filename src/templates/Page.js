@@ -19,8 +19,8 @@ export default function Page({ data }) {
           __html: firstParagraph,
         }}
       />
-      <div className="bg-themeLightGray px-6 py-4 mb-8 mt-4">
-        <h3 className="font-montserrat font-bold text-lg border border-b-4 border-r-0 border-l-0 border-t-0 border-themeYellow mb-4 pb-1 w-full">
+      <div className="px-6 py-4 mt-4 mb-8 bg-themeLightGray">
+        <h3 className="w-full pb-1 mb-4 text-lg font-bold border border-t-0 border-b-4 border-l-0 border-r-0 font-montserrat border-themeYellow">
           {page.pageCalloutTitle}
         </h3>
         <div
@@ -56,12 +56,12 @@ export const query = graphql`
       }
     }
     recentReviews: allContentfulReview(
-      sort: { fields: publishDate, order: DESC }
+      sort: { fields: createdAt, order: DESC }
       limit: 2
     ) {
       nodes {
         movieTitle
-        publishDate
+        createdAt
         posterImage {
           description
           file {
@@ -72,7 +72,9 @@ export const query = graphql`
           name
         }
         summary {
-          summary
+          childMarkdownRemark {
+            html
+          }
         }
         fields {
           slug

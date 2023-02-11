@@ -5,36 +5,41 @@ import { Link } from "gatsby"
 export default function FeaturedReviewSummary({ review }) {
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
-  review.publishDate = dayjs(review.publishDate).format("MMMM Do, YYYY")
+  review.createdAt = dayjs(review.createdAt).format("MMMM Do, YYYY")
   return (
     <div className="md:w-136 md:mx-auto">
       <Link to={`/${review.fields.slug}`}>
         <div className="relative pb-5">
           <div className="relative pb-2/3">
             <img
-              className="absolute h-full w-full object-cover"
+              className="absolute object-cover w-full h-full"
               src={review.posterImage.file.url}
               alt={review.posterImage.description}
               title={review.posterImage.description}
             />
           </div>
-          <div className="absolute top-0 w-16 h-16 bg-white bg-opacity-75 flex">
-            <div className="font-black text-4xl m-auto text-center">
+          <div className="absolute top-0 flex w-16 h-16 bg-white bg-opacity-75">
+            <div className="m-auto text-4xl font-black text-center">
               {review.grade}
             </div>
           </div>
-          <div className="absolute bottom-3/20 right-banner px-2 py-1 font-bold shadow bg-themeBlue">
+          <div className="absolute px-2 py-1 font-bold shadow bottom-3/20 right-banner bg-themeBlue">
             {review.series[0].name}
           </div>
         </div>
 
-        <h2 className="font-staatliches text-2xl md:text-3xl xl:text-4xl py-1 mb-3 border border-b-1 border-t-0 border-r-0 border-l-0 border-themeMediumGray hover:text-themePink">
+        <h2 className="py-1 mb-3 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b-1 border-themeMediumGray hover:text-themePink">
           {review.movieTitle}
         </h2>
       </Link>
-      <div className="xl:text-lg">{review.summary.summary}</div>
-      <div className="pt-2 text-sm text-themeDarkGray italic text-right xl:text-base">
-        {review.publishDate}
+      <div
+        className="xl:text-lg"
+        dangerouslySetInnerHTML={{
+          __html: review.summary.childMarkdownRemark.html,
+        }}
+      ></div>
+      <div className="pt-2 text-sm italic text-right text-themeDarkGray xl:text-base">
+        {review.createdAt}
       </div>
     </div>
   )

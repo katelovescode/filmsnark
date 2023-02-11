@@ -8,20 +8,24 @@ export default function RecentReviewSummary({ review, idx }) {
   return (
     <div className={`${idx === 0 ? "mt-6" : "mt-8"} md:mt-4 w-full md:w-23/50`}>
       <Link to={`/${review.fields.slug}`}>
-        <div className="relative pb-7/12 mb-4">
+        <div className="relative mb-4 pb-7/12">
           <img
-            className="absolute h-full w-full object-cover"
+            className="absolute object-cover w-full h-full"
             src={review.posterImage.file.url}
             alt={review.posterImage.description}
             title={review.posterImage.description}
           />
         </div>
-        <h4 className="text-xl border border-t-0 border-l-0 border-r-0 border-b-1 border-themeMediumGray pb-1 mb-2 xl:text-2xl">
+        <h4 className="pb-1 mb-2 text-xl border border-t-0 border-l-0 border-r-0 border-b-1 border-themeMediumGray xl:text-2xl">
           {review.movieTitle}
         </h4>
-        <div>{review.summary.summary}</div>
-        <div className="text-themeDarkGray text-sm italic text-right pt-4">
-          {dayjs(review.publishDate).format("MMMM Do, YYYY")}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: review.summary.childMarkdownRemark.html,
+          }}
+        ></div>
+        <div className="pt-4 text-sm italic text-right text-themeDarkGray">
+          {dayjs(review.createdAt).format("MMMM Do, YYYY")}
         </div>
       </Link>
     </div>

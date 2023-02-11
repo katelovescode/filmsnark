@@ -7,9 +7,7 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `${dayjs(node.publishDate).format("YYYY-MM-DD")} ${
-        node.movieTitle
-      }`
+      value: `${dayjs(node.createdAt).format("YYYY-MM-DD")} ${node.movieTitle}`
         .toLowerCase()
         .split(" ")
         .join("-"),
@@ -35,9 +33,11 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           grade
           movieTitle
-          publishDate
+          createdAt
           notableGrossness {
-            notableGrossness
+            childMarkdownRemark {
+              html
+            }
           }
           posterImage {
             description
@@ -53,7 +53,9 @@ exports.createPages = async ({ graphql, actions }) => {
             name
           }
           summary {
-            summary
+            childMarkdownRemark {
+              html
+            }
           }
           fields {
             slug
