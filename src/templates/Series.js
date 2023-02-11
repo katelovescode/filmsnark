@@ -56,6 +56,7 @@ export const query = graphql`
     rankedSeriesFilms: allContentfulSeries(filter: { name: { eq: $series } }) {
       nodes {
         rankedFilms {
+          __typename
           ... on ContentfulReview {
             id
             movieTitle
