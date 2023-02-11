@@ -24,4 +24,8 @@
     @apply list-disc;
     @apply mb-4 ml-4;
   }
+  a {
+    @apply text-themePink;
+    @apply hover:text-themeDarkGray;
+  }
 }
