@@ -43,6 +43,7 @@ export default function Footer() {
       </div>
       <div className="w-full mx-4 text-base text-center text-black md:w-2/5 md:text-right">
         <MailchimpSubscribeForm />
+        <h1>Changed</h1>
       </div>
     </footer>
   )
