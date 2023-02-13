@@ -5,7 +5,7 @@
 ## Setup
 
 1. Clone the repo down
-2. Ensure your environment is configured to the correct Node version (current version: 16.16.0)
+2. Ensure your environment is configured to the correct Node version (current version: 18.6.0)
 3. `yarn install`
 4. Copy the `.env.sample` to `.env` and update the values
 5. `yarn start`
