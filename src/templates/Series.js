@@ -30,7 +30,7 @@ export default function Series({ data }) {
 
 export const query = graphql`
   query($series: String!) {
-    allReviews: allContentfulReview(sort: { fields: createdAt, order: DESC }) {
+    allReviews: allContentfulReview(sort: { createdAt: DESC }) {
       nodes {
         movieTitle
         createdAt

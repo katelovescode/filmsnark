@@ -170,7 +170,7 @@ export const query = graphql`
         slug
       }
     }
-    allReviews: allContentfulReview(sort: { fields: createdAt, order: DESC }) {
+    allReviews: allContentfulReview(sort: { createdAt: DESC }) {
       nodes {
         movieTitle
         createdAt
