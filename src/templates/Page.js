@@ -55,10 +55,7 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview(
-      sort: { fields: createdAt, order: DESC }
-      limit: 2
-    ) {
+    recentReviews: allContentfulReview(sort: { createdAt: DESC }, limit: 2) {
       nodes {
         movieTitle
         createdAt

@@ -40,10 +40,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    featuredReview: allContentfulReview(
-      sort: { fields: createdAt, order: DESC }
-      limit: 1
-    ) {
+    featuredReview: allContentfulReview(sort: { createdAt: DESC }, limit: 1) {
       nodes {
         grade
         movieTitle
@@ -67,10 +64,7 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview(
-      sort: { fields: createdAt, order: DESC }
-      skip: 1
-    ) {
+    recentReviews: allContentfulReview(sort: { createdAt: DESC }, skip: 1) {
       nodes {
         movieTitle
         createdAt
