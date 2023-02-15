@@ -16,7 +16,7 @@
   "dependencies": {
     "@fontsource/montserrat": "^4.5.14",
     "@fontsource/staatliches": "^4.5.9",
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
