@@ -18,7 +18,7 @@ export default function FeaturedReviewSummary({ review }) {
               title={review.posterImage.description}
             />
           </div>
-          <div className="absolute top-0 flex w-16 h-16 bg-white bg-opacity-75">
+          <div className="absolute top-0 flex w-16 h-16 bg-white/75">
             <div className="m-auto text-4xl font-black text-center">
               {review.grade}
             </div>

@@ -146,7 +146,7 @@ export default function SeriesRankingTable({ reviews }) {
           <h3 className="text-xl">Sort By</h3>
           <div className="flex space-x-2 justify-between my-2">
             <button
-              className={`flex-grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
                 "rank"
               )}`}
               onClick={() => requestSort("rank")}
@@ -155,7 +155,7 @@ export default function SeriesRankingTable({ reviews }) {
               {getIcon("rank")}
             </button>
             <button
-              className={`flex-grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
                 "movieTitle"
               )}`}
               onClick={() => requestSort("movieTitle")}
@@ -164,7 +164,7 @@ export default function SeriesRankingTable({ reviews }) {
               {getIcon("movieTitle")}
             </button>
             <button
-              className={`flex-grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
                 "releaseDate"
               )}`}
               onClick={() => requestSort("releaseDate")}
@@ -173,7 +173,7 @@ export default function SeriesRankingTable({ reviews }) {
               {getIcon("releaseDate")}
             </button>
             <button
-              className={`flex-grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
                 "grade"
               )}`}
               onClick={() => requestSort("grade")}
@@ -187,7 +187,7 @@ export default function SeriesRankingTable({ reviews }) {
               <Link key={review.fields.slug} to={`/${review.fields.slug}`}>
                 {console.log("slug", review.fields.slug)}
                 <div className="shadow my-4 flex items-center">
-                  <div className="w-18 h-16 bg-themeYellow bg-opacity-75 font-black text-4xl px-4 py-3 flex-none">
+                  <div className="w-18 h-16 bg-themeYellow/75 font-black text-4xl px-4 py-3 flex-none">
                     {review.grade}
                   </div>
                   <div className="text-right w-full px-3.5 py-1">

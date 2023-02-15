@@ -5,7 +5,7 @@ module.exports = {
     defaultLineHeights: true,
     standardFontWeights: true,
   },
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   plugins: [
     require("@ky-is/tailwindcss-plugin-width-height")({
       variants: ["responsive"],
@@ -57,11 +57,6 @@ module.exports = {
         "2/3": "66.666667%",
         "3/4": "75%",
       },
-    },
-  },
-  variants: {
-    extend: {
-      fontStyle: ["group-hover"],
     },
   },
 }
