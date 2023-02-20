@@ -5664,10 +5664,10 @@ gatsby-sharp@^1.6.0:
     "@types/sharp" "^0.31.1"
     sharp "^0.31.3"
 
-gatsby-source-contentful@^8.6.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-8.6.0.tgz#00fcb5394aeb2a8bd0cee3e220baf54f025063ce"
-  integrity sha512-Q9PJtEwCcEGfowKluM4DxEmWICtAf1G+qIBkyaLOQ8yXkW6LPEQDbZqhyi5lN4ucrC5wDA7v6WK/5kjm3wPgHw==
+gatsby-source-contentful@^8.6.1:
+  version "8.6.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-8.6.1.tgz#a97fea171c6909c0afe0ecea14e8523c34ba0f36"
+  integrity sha512-FmDd4ykfr9MS7XiD0Z/YhTONudP7TJhtXR3h5vSPcjtawPjlKrxIvgR1SGjwy2lnTL1f/uAusSjGvJFupqhlhw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@contentful/rich-text-react-renderer" "^15.16.2"
