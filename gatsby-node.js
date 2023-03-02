@@ -7,8 +7,11 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `${dayjs(node.createdAt).format("YYYY-MM-DD")} ${node.movieTitle}`
+      value: `${dayjs(node.publishDate).format("YYYY-MM-DD")} ${
+        node.movieTitle
+      }`
         .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, "")
         .split(" ")
         .join("-"),
     })
