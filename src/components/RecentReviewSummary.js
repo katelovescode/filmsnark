@@ -25,7 +25,7 @@ export default function RecentReviewSummary({ review, idx }) {
           }}
         ></div>
         <div className="pt-4 text-sm italic text-right text-themeDarkGray">
-          {dayjs(review.createdAt).format("MMMM Do, YYYY")}
+          {dayjs(review.publishDate).format("MMMM Do, YYYY")}
         </div>
       </Link>
     </div>

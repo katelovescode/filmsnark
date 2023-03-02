@@ -57,10 +57,8 @@ export default function Review({ data }) {
     }
   }
 
-  const [
-    firstParagraph,
-    ...rest
-  ] = review.reviewText.childMarkdownRemark.html.split("</p>")
+  const [firstParagraph, ...rest] =
+    review.reviewText.childMarkdownRemark.html.split("</p>")
   const remainingParagraphs = rest.join("")
 
   return (
@@ -126,7 +124,7 @@ export default function Review({ data }) {
           }}
         />
         <div className="pb-8 mb-2 text-sm italic text-right text-themeDarkGray xl:text-base">
-          {dayjs(review.createdAt).format("MMMM Do, YYYY")}
+          {dayjs(review.publishDate).format("MMMM Do, YYYY")}
         </div>
       </div>
       <RelatedReviews reviews={relatedReviews} />
@@ -136,11 +134,11 @@ export default function Review({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!, $series: String!) {
+  query ($slug: String!, $series: String!) {
     thisReview: contentfulReview(fields: { slug: { eq: $slug } }) {
       grade
       movieTitle
-      createdAt
+      publishDate
       series {
         name
       }
@@ -170,10 +168,10 @@ export const query = graphql`
         slug
       }
     }
-    allReviews: allContentfulReview(sort: { createdAt: DESC }) {
+    allReviews: allContentfulReview(sort: { publishDate: DESC }) {
       nodes {
         movieTitle
-        createdAt
+        publishDate
         posterImage {
           description
           file {
