@@ -29,11 +29,11 @@ export default function Series({ data }) {
 }
 
 export const query = graphql`
-  query($series: String!) {
-    allReviews: allContentfulReview(sort: { createdAt: DESC }) {
+  query ($series: String!) {
+    allReviews: allContentfulReview(sort: { publishDate: DESC }) {
       nodes {
         movieTitle
-        createdAt
+        publishDate
         posterImage {
           description
           file {

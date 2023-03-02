@@ -7,7 +7,7 @@ export default function RelatedReviews({ reviews }) {
       {reviews.map(review => {
         return (
           <RelatedReviewSummary
-            key={review.movieTitle + review.createdAt}
+            key={review.movieTitle + review.publishDate}
             review={review}
           />
         )

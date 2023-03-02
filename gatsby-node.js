@@ -7,11 +7,10 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `${dayjs(node.publishDate).format("YYYY-MM-DD")} ${
-        node.movieTitle
-      }`
+      value: `${dayjs(node.publishDate).format(
+        "YYYY-MM-DD"
+      )} ${node.movieTitle.replace(/[^a-zA-Z0-9 ]/g, "")}`
         .toLowerCase()
-        .replace(/[^a-z0-9 ]/g, "")
         .split(" ")
         .join("-"),
     })
@@ -36,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           grade
           movieTitle
-          createdAt
+          publishDate
           notableGrossness {
             childMarkdownRemark {
               html

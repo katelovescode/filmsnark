@@ -6,10 +6,8 @@ import RecentReviews from "../components/RecentReviews"
 export default function Page({ data }) {
   const page = data.thisPage
 
-  const [
-    firstParagraph,
-    ...rest
-  ] = page.pageText.childMarkdownRemark.html.split("</p>")
+  const [firstParagraph, ...rest] =
+    page.pageText.childMarkdownRemark.html.split("</p>")
   const remainingParagraphs = rest.join("")
   return (
     <Layout>
@@ -40,7 +38,7 @@ export default function Page({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     thisPage: contentfulPage(fields: { slug: { eq: $slug } }) {
       name
       pageCalloutTitle
@@ -55,10 +53,10 @@ export const query = graphql`
         }
       }
     }
-    recentReviews: allContentfulReview(sort: { createdAt: DESC }, limit: 2) {
+    recentReviews: allContentfulReview(sort: { publishDate: DESC }, limit: 2) {
       nodes {
         movieTitle
-        createdAt
+        publishDate
         posterImage {
           description
           file {
