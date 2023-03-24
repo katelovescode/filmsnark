@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 export default function FeaturedReviewSummary({ review }) {
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
-  review.publishDate = dayjs(review.publishDate).format("MMMM Do, YYYY")
   return (
     <div className="md:w-136 md:mx-auto">
       <Link to={`/${review.fields.slug}`}>
@@ -39,7 +38,7 @@ export default function FeaturedReviewSummary({ review }) {
         }}
       ></div>
       <div className="pt-2 text-sm italic text-right text-themeDarkGray xl:text-base">
-        {review.publishDate}
+        {dayjs(review.publishDate).format("MMMM Do, YYYY")}
       </div>
     </div>
   )
