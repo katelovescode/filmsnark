@@ -22,7 +22,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@ky-is/tailwindcss-plugin-width-height": "^1.0.0",
-    "@percy/cli": "^1.18.0",
+    "@percy/cli": "^1.21.0",
     "autoprefixer": "^10.4.13",
     "dayjs": "^1.9.3",
     "dotenv": "^16.0.3",
