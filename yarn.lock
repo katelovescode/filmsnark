@@ -5580,10 +5580,10 @@ gatsby-plugin-percy@^1.1.0:
   dependencies:
     "@percy/sdk-utils" "^1.0.0"
 
-gatsby-plugin-postcss@^6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-6.6.0.tgz#83ef9d5c59418d349180585927e917a1ef551c7b"
-  integrity sha512-Cm86gxSjntoUl5kdyeG5nRjouZlAOd/YzefUeNWAvFRUXo9iAvhbbxDVkYi4ThcwoFCFp2eK9KKRYZHCGMdjVw==
+gatsby-plugin-postcss@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-6.8.0.tgz#844a83736c7bb601e2b60cd3896ea7e7ac6e10e5"
+  integrity sha512-lxVG4qaFN7fxAhE+KYAp0X4oNDzl2LKsht9rd7z1ehUXjBydEFoS/RJZteKVC9TmfySUHlZ6djqL9v8jyhI46w==
   dependencies:
     "@babel/runtime" "^7.20.13"
     postcss-loader "^7.0.2"
