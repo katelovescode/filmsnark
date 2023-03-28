@@ -8,6 +8,21 @@ require("dotenv").config({
   path: ".env",
 })
 
+let contentfulOptions = {}
+if (process.env.CONTEXT === "production") {
+  contentfulOptions = {
+    spaceId: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_TOKEN,
+    host: process.env.CONTENTFUL_HOST,
+  }
+} else {
+  contentfulOptions = {
+    spaceId: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN,
+    host: process.env.CONTENTFUL_PREVIEW_HOST,
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: `Film Snark`,
@@ -26,10 +41,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
+      options: contentfulOptions,
     },
     {
       resolve: "gatsby-plugin-web-font-loader",
