@@ -25,7 +25,7 @@
     "@percy/cli": "^1.26.2",
     "autoprefixer": "^10.4.14",
     "dayjs": "^1.11.9",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-html-attributes": "^1.0.5",
