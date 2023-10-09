@@ -1111,10 +1111,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.14.tgz#5f4bfc5e7f234a986d94d9e7e7193f852e6971e3"
   integrity sha512-fTvrteVzuFUePhr4QYBGoK8G/YHLJ3IhF1HhKg0AxcFvZajJT7rM7ULdmKLSd2PkX44R3aaFZq1zDbmjbGGI+w==
 
-"@fontsource/staatliches@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/staatliches/-/staatliches-4.5.9.tgz#2dfc5a03ca24201978877bd1820940ace3c0d6a5"
-  integrity sha512-zphSXq1q4mvLwMG6X5K/AG5BLcldDQbT4aZYMZpO/+FnGlTH2hTRII3axeozNDRlRX0UuSetamV7ccq3mBmTUQ==
+"@fontsource/staatliches@^5.0.15":
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/@fontsource/staatliches/-/staatliches-5.0.15.tgz#d45c72d85ea3dc261d7015979e3cbb5bb57c8563"
+  integrity sha512-zi7gfZSvysMbYINfS7xgf0MTOJsD2kmva4VFQqDDazFDGmLI7dML1awDJmqYga2qYfixpjxHR2u54YHGQr2pJg==
 
 "@fortawesome/fontawesome-common-types@6.4.0":
   version "6.4.0"
