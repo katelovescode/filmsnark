@@ -22,11 +22,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@ky-is/tailwindcss-plugin-width-height": "^1.0.0",
-    "@percy/cli": "^1.27.4",
+    "@percy/cli": "^1.27.7",
     "autoprefixer": "^10.4.16",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
-    "gatsby": "^5.13.0",
+    "gatsby": "^5.13.1",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-image": "^3.13.0",
@@ -37,11 +37,11 @@
     "gatsby-source-contentful": "^8.13.0",
     "gatsby-transformer-remark": "^6.13.0",
     "jsonp": "^0.2.1",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "prettier": "^3.1.1"
