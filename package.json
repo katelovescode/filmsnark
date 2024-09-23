@@ -14,8 +14,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@fontsource/montserrat": "^5.0.20",
-    "@fontsource/staatliches": "^5.0.22",
+    "@fontsource/montserrat": "^5.1.0",
+    "@fontsource/staatliches": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
@@ -37,11 +37,11 @@
     "gatsby-source-contentful": "^8.13.2",
     "gatsby-transformer-remark": "^6.13.1",
     "jsonp": "^0.2.1",
-    "postcss": "^8.4.45",
+    "postcss": "^8.4.47",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.12"
   },
   "devDependencies": {
     "prettier": "^3.3.3"
