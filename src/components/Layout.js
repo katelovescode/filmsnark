@@ -35,7 +35,7 @@ export default function Layout({ children }) {
         ></script>
       </Helmet>
       <Header />
-      <main className="grow xl:mt-40 mt-14 px-8 md:w-136 md:px-0 md:mx-auto">
+      <main className="grow xl:mt-40 mt-14 px-8 md:w-[34rem] md:px-0 md:mx-auto">
         {children}
       </main>
       <Footer />

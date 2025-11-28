@@ -70,7 +70,7 @@ export default function SeriesRankingTable({ reviews }) {
               </th>
               <th
                 className={`table-cell p-2.5 ${classNameIfSorted(
-                  "movieTitle"
+                  "movieTitle",
                 )}`}
                 onClick={() => requestSort("movieTitle")}
               >
@@ -79,7 +79,7 @@ export default function SeriesRankingTable({ reviews }) {
               </th>
               <th
                 className={`hidden md:table-cell p-2.5 ${classNameIfSorted(
-                  "releaseDate"
+                  "releaseDate",
                 )}`}
                 onClick={() => requestSort("releaseDate")}
               >
@@ -105,7 +105,7 @@ export default function SeriesRankingTable({ reviews }) {
               >
                 <td className="table-cell group-hover:bg-themeLightGray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
@@ -114,7 +114,7 @@ export default function SeriesRankingTable({ reviews }) {
                 </td>
                 <td className="table-cell group-hover:bg-themeLightGray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                   >
                     {review.movieTitle}
@@ -122,7 +122,7 @@ export default function SeriesRankingTable({ reviews }) {
                 </td>
                 <td className="hidden md:table-cell group-hover:bg-themeLightGray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
@@ -131,7 +131,7 @@ export default function SeriesRankingTable({ reviews }) {
                 </td>
                 <td className="table-cell group-hover:bg-themeLightGray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
@@ -147,7 +147,7 @@ export default function SeriesRankingTable({ reviews }) {
           <div className="flex space-x-2 justify-between my-2">
             <button
               className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
-                "rank"
+                "rank",
               )}`}
               onClick={() => requestSort("rank")}
             >
@@ -156,7 +156,7 @@ export default function SeriesRankingTable({ reviews }) {
             </button>
             <button
               className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
-                "movieTitle"
+                "movieTitle",
               )}`}
               onClick={() => requestSort("movieTitle")}
             >
@@ -165,7 +165,7 @@ export default function SeriesRankingTable({ reviews }) {
             </button>
             <button
               className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
-                "releaseDate"
+                "releaseDate",
               )}`}
               onClick={() => requestSort("releaseDate")}
             >
@@ -174,7 +174,7 @@ export default function SeriesRankingTable({ reviews }) {
             </button>
             <button
               className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
-                "grade"
+                "grade",
               )}`}
               onClick={() => requestSort("grade")}
             >
@@ -186,8 +186,8 @@ export default function SeriesRankingTable({ reviews }) {
             {sortedReviews.map(review => (
               <Link key={review.fields.slug} to={`/${review.fields.slug}`}>
                 {console.log("slug", review.fields.slug)}
-                <div className="shadow my-4 flex items-center">
-                  <div className="w-18 h-16 bg-themeYellow/75 font-black text-4xl px-4 py-3 flex-none">
+                <div className="shadow-sm my-4 flex items-center">
+                  <div className="w-[4.5rem] h-16 bg-themeYellow/75 font-black text-4xl px-4 py-3 flex-none">
                     {review.grade}
                   </div>
                   <div className="text-right w-full px-3.5 py-1">

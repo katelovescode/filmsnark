@@ -22,7 +22,7 @@ export default function Review({ data }) {
         review.fields.slug !== singleReview.fields.slug
       )
     },
-    2
+    2,
   )
 
   // remove the reviews that are already in the related review array
@@ -34,7 +34,7 @@ export default function Review({ data }) {
         review.fields.slug !== singleReview.fields.slug
       )
     },
-    2
+    2,
   )
 
   const rankedSeriesFilms = data.rankedSeriesFilms.nodes[0].rankedFilms
@@ -42,7 +42,7 @@ export default function Review({ data }) {
   rankedSeriesFilms.forEach((rankedFilm, idx) => (rankedFilm.rank = idx + 1))
 
   const thisFilmIndex = rankedSeriesFilms.findIndex(
-    singleReview => singleReview.fields.slug === review.fields.slug
+    singleReview => singleReview.fields.slug === review.fields.slug,
   )
 
   const threeRankedFilms = () => {
@@ -63,7 +63,7 @@ export default function Review({ data }) {
 
   return (
     <Layout>
-      <div className="md:w-136 md:mx-auto">
+      <div className="md:w-[34rem] md:mx-auto">
         <div className="relative pb-5">
           <div className="relative pb-2/3">
             <img
@@ -78,7 +78,7 @@ export default function Review({ data }) {
               {review.grade}
             </div>
           </div>
-          <div className="absolute px-2 py-1 font-bold shadow bottom-3/20 right-banner bg-themeBlue">
+          <div className="absolute px-2 py-1 font-bold shadow-sm bottom-3/20 right-banner bg-themeBlue">
             {review.series[0].name}
           </div>
         </div>

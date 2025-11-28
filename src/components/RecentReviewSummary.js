@@ -6,7 +6,9 @@ export default function RecentReviewSummary({ review, idx }) {
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
   return (
-    <div className={`${idx === 0 ? "mt-6" : "mt-8"} md:mt-4 w-full md:w-23/50`}>
+    <div
+      className={`${idx === 0 ? "mt-6" : "mt-8"} md:mt-4 w-full md:w-46/100`}
+    >
       <Link to={`/${review.fields.slug}`}>
         <div className="relative mb-4 pb-7/12">
           <img

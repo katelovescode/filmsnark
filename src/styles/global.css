@@ -1,12 +1,16 @@
-@tailwind base;
+@import "tailwindcss";
 
-@tailwind components;
+@theme {
+  --font-staatliches: "Staatliches";
+  --font-montserrat: "Montserrat";
+  --color-themeYellow: "#F4E024";
+  --color-themeBlue: "#1CDFD3";
+  --color-themePink: "#DA09AC";
+  --color-themeDarkGray: "#4E4E4E";
+  --color-themeMediumGray: "#BABABA";
+  --color-themeLightGray: "#F3F3F3";
+}
 
-@tailwind utilities;
-
-@tailwind variants;
-
-@layer base {
   body {
     @apply font-montserrat;
   }

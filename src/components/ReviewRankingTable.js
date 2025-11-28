@@ -26,7 +26,7 @@ export default function ReviewRankingTable({ reviews, thisReviewTitle }) {
             >
               <td className="table-cell group-hover:bg-themeLightGray">
                 <Link
-                  className="block py-2.5 px-2 focus:outline-none"
+                  className="block py-2.5 px-2 focus:outline-hidden"
                   to={`/${review.fields.slug}`}
                   tabIndex="-1"
                 >
@@ -35,7 +35,7 @@ export default function ReviewRankingTable({ reviews, thisReviewTitle }) {
               </td>
               <td className="table-cell group-hover:bg-themeLightGray">
                 <Link
-                  className="block py-2.5 px-2 focus:outline-none"
+                  className="block py-2.5 px-2 focus:outline-hidden"
                   to={`/${review.fields.slug}`}
                 >
                   {review.movieTitle}
@@ -43,7 +43,7 @@ export default function ReviewRankingTable({ reviews, thisReviewTitle }) {
               </td>
               <td className="hidden md:table-cell group-hover:bg-themeLightGray">
                 <Link
-                  className="block py-2.5 px-2 focus:outline-none"
+                  className="block py-2.5 px-2 focus:outline-hidden"
                   to={`/${review.fields.slug}`}
                   tabIndex="-1"
                 >
@@ -52,7 +52,7 @@ export default function ReviewRankingTable({ reviews, thisReviewTitle }) {
               </td>
               <td className="table-cell group-hover:bg-themeLightGray">
                 <Link
-                  className="block py-2.5 px-2 focus:outline-none"
+                  className="block py-2.5 px-2 focus:outline-hidden"
                   to={`/${review.fields.slug}`}
                   tabIndex="-1"
                 >

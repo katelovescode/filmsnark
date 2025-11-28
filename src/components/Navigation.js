@@ -97,13 +97,13 @@ export default function Navigation() {
       </button>
       <button
         onClick={closeMenu}
-        className={`${displayWithMenu} outline-none fixed inset-0 w-full h-full cursor-default`}
+        className={`${displayWithMenu} outline-hidden fixed inset-0 w-full h-full cursor-default`}
         tabIndex="-1"
       >
         <span className="sr-only">Close Menu</span>
       </button>
       <div
-        className={`${displayWithMenu} menu absolute -mt-1 right-0 w-full z-10 md:w-88`}
+        className={`${displayWithMenu} menu absolute -mt-1 right-0 w-full z-10 md:w-[22rem]`}
       >
         <div className="bg-white text-left clear-both leading-8 text-lg border border-themeMediumGray">
           <div className="block xl:hidden">{renderPages()}</div>

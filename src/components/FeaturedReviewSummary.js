@@ -6,7 +6,7 @@ export default function FeaturedReviewSummary({ review }) {
   var advancedFormat = require("dayjs/plugin/advancedFormat")
   dayjs.extend(advancedFormat)
   return (
-    <div className="md:w-136 md:mx-auto">
+    <div className="md:w-[34rem] md:mx-auto">
       <Link to={`/${review.fields.slug}`}>
         <div className="relative pb-5">
           <div className="relative pb-2/3">
@@ -22,7 +22,7 @@ export default function FeaturedReviewSummary({ review }) {
               {review.grade}
             </div>
           </div>
-          <div className="absolute px-2 py-1 font-bold shadow bottom-3/20 right-banner bg-themeBlue">
+          <div className="absolute px-2 py-1 font-bold shadow-sm bottom-3/20 right-banner bg-themeBlue">
             {review.series[0].name}
           </div>
         </div>
