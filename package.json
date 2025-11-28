@@ -16,18 +16,18 @@
   "dependencies": {
     "@fontsource/montserrat": "^5.1.1",
     "@fontsource/staatliches": "^5.1.1",
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "@ky-is/tailwindcss-plugin-width-height": "^1.0.0",
     "@percy/cli": "^1.30.6",
     "@typescript-eslint/eslint-plugin": "^8.21.0",
     "@typescript-eslint/parser": "^8.21.0",
     "autoprefixer": "^10.4.20",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.2.3",
     "eslint": "^9.18.0",
     "gatsby": "next",
     "gatsby-cli": "^5.15.0",
@@ -45,7 +45,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "prettier": "^3.4.2"
