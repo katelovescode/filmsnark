@@ -11,6 +11,7 @@
   --color-themeLightGray: "#F3F3F3";
 }
 
+@layer base {
   body {
     @apply font-montserrat;
   }
