@@ -23,6 +23,7 @@
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@ky-is/tailwindcss-plugin-width-height": "^1.0.0",
     "@percy/cli": "^1.31.4",
+    "@tailwindcss/postcss": "^4.1.17",
     "@typescript-eslint/eslint-plugin": "^8.48.0",
     "@typescript-eslint/parser": "^8.48.0",
     "autoprefixer": "^10.4.22",
