@@ -14,8 +14,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@fontsource/montserrat": "^5.1.1",
-    "@fontsource/staatliches": "^5.1.1",
+    "@fontsource/montserrat": "^5.2.8",
+    "@fontsource/staatliches": "^5.2.8",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
