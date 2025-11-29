@@ -39,7 +39,7 @@
     "gatsby-source-contentful": "next",
     "gatsby-transformer-remark": "next",
     "jsonp": "^0.2.1",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-helmet": "^6.1.0",
