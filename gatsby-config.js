@@ -43,13 +43,5 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: contentfulOptions,
     },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Staatliches", "Montserrat"],
-        },
-      },
-    },
   ],
 }

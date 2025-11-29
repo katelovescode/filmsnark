@@ -36,7 +36,6 @@
     "gatsby-plugin-percy": "^1.1.0",
     "gatsby-plugin-postcss": "next",
     "gatsby-plugin-react-helmet": "next",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-contentful": "next",
     "gatsby-transformer-remark": "next",
     "jsonp": "^0.2.1",
