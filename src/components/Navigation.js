@@ -57,7 +57,7 @@ export default function Navigation() {
             key={page.name}
             className={`block ${
               xl ? "xl:inline-block" : "xl:hidden"
-            } hover:text-themePink pt-2 pb-1 px-4`}
+            } hover:text-theme-pink pt-2 pb-1 px-4`}
             to={`/${page.fields.slug}`}
           >
             {page.name}
@@ -76,8 +76,8 @@ export default function Navigation() {
     <nav role="navigation">
       <button
         onClick={toggleMenu}
-        className={`z-10 border border-themePink ${
-          isOpen ? "bg-themePink text-white" : "bg-white text-themePink"
+        className={`z-10 border border-theme-pink ${
+          isOpen ? "bg-theme-pink text-white" : "bg-white text-theme-pink"
         } font-staatliches text-2xl px-4 py-1 mt-1 xl:hidden`}
       >
         <span className="pr-2">{hamburger}</span> Menu
@@ -88,8 +88,8 @@ export default function Navigation() {
       <button
         className={`z-10 hidden  ${
           isOpen
-            ? "bg-themePink text-white hover:text-white"
-            : "hover:text-themePink"
+            ? "bg-theme-pink text-white hover:text-white"
+            : "hover:text-theme-pink"
         } px-4 py-1 mt-1 xl:inline-block text-2xl font-bold`}
         onClick={toggleMenu}
       >
@@ -97,7 +97,7 @@ export default function Navigation() {
       </button>
       <button
         onClick={closeMenu}
-        className={`${displayWithMenu} outline-none fixed inset-0 w-full h-full cursor-default`}
+        className={`${displayWithMenu} outline-hidden fixed inset-0 w-full h-full cursor-default`}
         tabIndex="-1"
       >
         <span className="sr-only">Close Menu</span>
@@ -105,9 +105,9 @@ export default function Navigation() {
       <div
         className={`${displayWithMenu} menu absolute -mt-1 right-0 w-full z-10 md:w-88`}
       >
-        <div className="bg-white text-left clear-both leading-8 text-lg border border-themeMediumGray">
+        <div className="bg-white text-left clear-both leading-8 text-lg border border-theme-medium-gray">
           <div className="block xl:hidden">{renderPages()}</div>
-          <div className="text-sm text-themeDarkGray mb-2 text-right border border-themeMediumGray border-b-1 border-t-0 border-l-0 border-r-0 py-1 px-4 mx-2 xl:hidden">
+          <div className="text-sm text-theme-dark-gray mb-2 text-right border border-theme-medium-gray border-b border-t-0 border-l-0 border-r-0 py-1 px-4 mx-2 xl:hidden">
             Rankings by Series
           </div>
           <div className="pb-2 xl:pt-2">
@@ -115,7 +115,7 @@ export default function Navigation() {
               return (
                 <Link
                   key={series.slug}
-                  className="block pl-8 leading-8 hover:text-themePink"
+                  className="block pl-8 leading-8 hover:text-theme-pink"
                   to={`/${series.slug}`}
                 >
                   {series.name}

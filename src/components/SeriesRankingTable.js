@@ -35,7 +35,7 @@ export default function SeriesRankingTable({ reviews }) {
     if (!sortConfig) {
       return
     }
-    return sortConfig.key === name ? `bg-themeBlue ${sortConfig.direction}` : ""
+    return sortConfig.key === name ? `bg-theme-blue ${sortConfig.direction}` : ""
   }
 
   const getIcon = name => {
@@ -60,7 +60,7 @@ export default function SeriesRankingTable({ reviews }) {
       <>
         <table className="hidden md:block text-left w-full mb-12">
           <thead>
-            <tr className="font-semibold border border-black border-b-1 border-r-0 border-l-0 border-t-0 text-sm">
+            <tr className="font-semibold border border-black border-b border-r-0 border-l-0 border-t-0 text-sm">
               <th
                 className={`table-cell p-2.5 ${classNameIfSorted("rank")}`}
                 onClick={() => requestSort("rank")}
@@ -100,38 +100,38 @@ export default function SeriesRankingTable({ reviews }) {
               <tr
                 key={review.fields.slug}
                 className={
-                  "border border-themeMediumGray border-b-1 border-r-0 border-l-0 border-t-0 text-sm group cursor-pointer"
+                  "border border-theme-medium-gray border-b border-r-0 border-l-0 border-t-0 text-sm group cursor-pointer"
                 }
               >
-                <td className="table-cell group-hover:bg-themeLightGray">
+                <td className="table-cell group-hover:bg-theme-light-gray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
                     {review.rank}
                   </Link>
                 </td>
-                <td className="table-cell group-hover:bg-themeLightGray">
+                <td className="table-cell group-hover:bg-theme-light-gray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                   >
                     {review.movieTitle}
                   </Link>
                 </td>
-                <td className="hidden md:table-cell group-hover:bg-themeLightGray">
+                <td className="hidden md:table-cell group-hover:bg-theme-light-gray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
                     {dayjs(review.releaseDate).format("YYYY")}
                   </Link>
                 </td>
-                <td className="table-cell group-hover:bg-themeLightGray">
+                <td className="table-cell group-hover:bg-theme-light-gray">
                   <Link
-                    className="block p-2.5 focus:outline-none"
+                    className="block p-2.5 focus:outline-hidden"
                     to={`/${review.fields.slug}`}
                     tabIndex="-1"
                   >
@@ -146,7 +146,7 @@ export default function SeriesRankingTable({ reviews }) {
           <h3 className="text-xl">Sort By</h3>
           <div className="flex space-x-2 justify-between my-2">
             <button
-              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-theme-medium-gray ${classNameIfSorted(
                 "rank"
               )}`}
               onClick={() => requestSort("rank")}
@@ -155,7 +155,7 @@ export default function SeriesRankingTable({ reviews }) {
               {getIcon("rank")}
             </button>
             <button
-              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-theme-medium-gray ${classNameIfSorted(
                 "movieTitle"
               )}`}
               onClick={() => requestSort("movieTitle")}
@@ -164,7 +164,7 @@ export default function SeriesRankingTable({ reviews }) {
               {getIcon("movieTitle")}
             </button>
             <button
-              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-theme-medium-gray ${classNameIfSorted(
                 "releaseDate"
               )}`}
               onClick={() => requestSort("releaseDate")}
@@ -173,7 +173,7 @@ export default function SeriesRankingTable({ reviews }) {
               {getIcon("releaseDate")}
             </button>
             <button
-              className={`grow px-2 text-sm py-2 inline-block border border-themeMediumGray ${classNameIfSorted(
+              className={`grow px-2 text-sm py-2 inline-block border border-theme-medium-gray ${classNameIfSorted(
                 "grade"
               )}`}
               onClick={() => requestSort("grade")}
@@ -186,8 +186,8 @@ export default function SeriesRankingTable({ reviews }) {
             {sortedReviews.map(review => (
               <Link key={review.fields.slug} to={`/${review.fields.slug}`}>
                 {console.log("slug", review.fields.slug)}
-                <div className="shadow my-4 flex items-center">
-                  <div className="w-18 h-16 bg-themeYellow/75 font-black text-4xl px-4 py-3 flex-none">
+                <div className="shadow-sm my-4 flex items-center">
+                  <div className="w-18 h-16 bg-theme-yellow/75 font-black text-4xl px-4 py-3 flex-none">
                     {review.grade}
                   </div>
                   <div className="text-right w-full px-3.5 py-1">

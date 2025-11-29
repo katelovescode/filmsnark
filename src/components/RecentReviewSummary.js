@@ -16,7 +16,7 @@ export default function RecentReviewSummary({ review, idx }) {
             title={review.posterImage.description}
           />
         </div>
-        <h4 className="pb-1 mb-2 text-xl border border-t-0 border-l-0 border-r-0 border-b-1 border-themeMediumGray xl:text-2xl">
+        <h4 className="pb-1 mb-2 text-xl border border-t-0 border-l-0 border-r-0 border-b border-theme-medium-gray xl:text-2xl">
           {review.movieTitle}
         </h4>
         <div
@@ -24,7 +24,7 @@ export default function RecentReviewSummary({ review, idx }) {
             __html: review.summary.childMarkdownRemark.html,
           }}
         ></div>
-        <div className="pt-4 text-sm italic text-right text-themeDarkGray">
+        <div className="pt-4 text-sm italic text-right text-theme-dark-gray">
           {dayjs(review.publishDate).format("MMMM Do, YYYY")}
         </div>
       </Link>

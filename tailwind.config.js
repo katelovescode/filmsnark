@@ -6,11 +6,11 @@ module.exports = {
     standardFontWeights: true,
   },
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  plugins: [
-    require("@ky-is/tailwindcss-plugin-width-height")({
-      variants: ["responsive"],
-    }),
-  ],
+  // plugins: [
+  //   require("@ky-is/tailwindcss-plugin-width-height")({
+  //     variants: ["responsive"],
+  //   }),
+  // ],
   theme: {
     extend: {
       fontFamily: {

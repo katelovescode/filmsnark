@@ -22,12 +22,12 @@ export default function FeaturedReviewSummary({ review }) {
               {review.grade}
             </div>
           </div>
-          <div className="absolute px-2 py-1 font-bold shadow bottom-3/20 right-banner bg-themeBlue">
+          <div className="absolute px-2 py-1 font-bold shadow-sm bottom-3/20 right-banner bg-theme-blue">
             {review.series[0].name}
           </div>
         </div>
 
-        <h2 className="py-1 mb-3 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b-1 border-themeMediumGray hover:text-themePink">
+        <h2 className="py-1 mb-3 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b border-theme-medium-gray hover:text-theme-pink">
           {review.movieTitle}
         </h2>
       </Link>
@@ -37,7 +37,7 @@ export default function FeaturedReviewSummary({ review }) {
           __html: review.summary.childMarkdownRemark.html,
         }}
       ></div>
-      <div className="pt-2 text-sm italic text-right text-themeDarkGray xl:text-base">
+      <div className="pt-2 text-sm italic text-right text-theme-dark-gray xl:text-base">
         {dayjs(review.publishDate).format("MMMM Do, YYYY")}
       </div>
     </div>

@@ -78,12 +78,12 @@ export default function Review({ data }) {
               {review.grade}
             </div>
           </div>
-          <div className="absolute px-2 py-1 font-bold shadow bottom-3/20 right-banner bg-themeBlue">
+          <div className="absolute px-2 py-1 font-bold shadow-sm bottom-3/20 right-banner bg-theme-blue">
             {review.series[0].name}
           </div>
         </div>
 
-        <h2 className="py-1 pb-2 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b-1 border-themeMediumGray">
+        <h2 className="py-1 pb-2 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b border-theme-medium-gray">
           <div>{review.movieTitle}</div>
           <div className="text-base italic text-right font-montserrat">
             Released: {dayjs(review.releaseDate).format("MMMM Do, YYYY")}
@@ -107,8 +107,8 @@ export default function Review({ data }) {
           }}
         />
         {review.notableGrossness && (
-          <div className="px-6 py-4 mt-4 mb-8 bg-themeLightGray">
-            <h3 className="w-full pb-1 mb-4 text-lg font-bold border border-t-0 border-b-4 border-l-0 border-r-0 font-montserrat border-themeYellow">
+          <div className="px-6 py-4 mt-4 mb-8 bg-theme-light-gray">
+            <h3 className="w-full pb-1 mb-4 text-lg font-bold border border-t-0 border-b-4 border-l-0 border-r-0 font-montserrat border-theme-yellow">
               Notable Grossness
             </h3>
             <div
@@ -123,7 +123,7 @@ export default function Review({ data }) {
             __html: remainingParagraphs,
           }}
         />
-        <div className="pb-8 mb-2 text-sm italic text-right text-themeDarkGray xl:text-base">
+        <div className="pb-8 mb-2 text-sm italic text-right text-theme-dark-gray xl:text-base">
           {dayjs(review.publishDate).format("MMMM Do, YYYY")}
         </div>
       </div>
