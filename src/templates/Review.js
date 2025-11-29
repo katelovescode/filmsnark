@@ -63,7 +63,7 @@ export default function Review({ data }) {
 
   return (
     <Layout>
-      <div className="md:w-[34rem] md:mx-auto">
+      <div className="md:w-136 md:mx-auto">
         <div className="relative pb-5">
           <div className="relative pb-2/3">
             <img
@@ -83,7 +83,7 @@ export default function Review({ data }) {
           </div>
         </div>
 
-        <h2 className="py-1 pb-2 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b-1 border-themeMediumGray">
+        <h2 className="py-1 pb-2 text-2xl border border-t-0 border-l-0 border-r-0 font-staatliches md:text-3xl xl:text-4xl border-b border-themeMediumGray">
           <div>{review.movieTitle}</div>
           <div className="text-base italic text-right font-montserrat">
             Released: {dayjs(review.releaseDate).format("MMMM Do, YYYY")}

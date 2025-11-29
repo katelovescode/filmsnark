@@ -18,7 +18,7 @@ export default function RecentReviewSummary({ review, idx }) {
             title={review.posterImage.description}
           />
         </div>
-        <h4 className="pb-1 mb-2 text-xl border border-t-0 border-l-0 border-r-0 border-b-1 border-themeMediumGray xl:text-2xl">
+        <h4 className="pb-1 mb-2 text-xl border border-t-0 border-l-0 border-r-0 border-b border-themeMediumGray xl:text-2xl">
           {review.movieTitle}
         </h4>
         <div

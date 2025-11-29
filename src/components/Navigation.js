@@ -103,11 +103,11 @@ export default function Navigation() {
         <span className="sr-only">Close Menu</span>
       </button>
       <div
-        className={`${displayWithMenu} menu absolute -mt-1 right-0 w-full z-10 md:w-[22rem]`}
+        className={`${displayWithMenu} menu absolute -mt-1 right-0 w-full z-10 md:w-88`}
       >
         <div className="bg-white text-left clear-both leading-8 text-lg border border-themeMediumGray">
           <div className="block xl:hidden">{renderPages()}</div>
-          <div className="text-sm text-themeDarkGray mb-2 text-right border border-themeMediumGray border-b-1 border-t-0 border-l-0 border-r-0 py-1 px-4 mx-2 xl:hidden">
+          <div className="text-sm text-themeDarkGray mb-2 text-right border border-themeMediumGray border-b border-t-0 border-l-0 border-r-0 py-1 px-4 mx-2 xl:hidden">
             Rankings by Series
           </div>
           <div className="pb-2 xl:pt-2">
