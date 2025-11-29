@@ -17,8 +17,8 @@ export default function Page({ data }) {
           __html: firstParagraph,
         }}
       />
-      <div className="px-6 py-4 mt-4 mb-8 bg-themeLightGray">
-        <h3 className="w-full pb-1 mb-4 text-lg font-bold border border-t-0 border-b-4 border-l-0 border-r-0 font-montserrat border-themeYellow">
+      <div className="px-6 py-4 mt-4 mb-8 bg-theme-light-gray">
+        <h3 className="w-full pb-1 mb-4 text-lg font-bold border border-t-0 border-b-4 border-l-0 border-r-0 font-montserrat border-theme-yellow">
           {page.pageCalloutTitle}
         </h3>
         <div

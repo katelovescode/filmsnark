@@ -62,7 +62,7 @@ export default function MailchimpSubscribeForm() {
       <input
         type="submit"
         value="Submit"
-        className="inline-block bg-themeYellow text-black font-bold p-2 ml-4"
+        className="inline-block bg-theme-yellow text-black font-bold p-2 ml-4"
       />
       {subscriptionStatus.status !== "pending" && (
         <div className="text-white mt-2">{subscriptionStatus.message}</div>

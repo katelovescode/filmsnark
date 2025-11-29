@@ -34,7 +34,7 @@ export default function Footer() {
             rel="noreferrer"
           >
             <img
-              className="inline-block w-2/3 p-2 bg-themeBlue lg:w-1/2"
+              className="inline-block w-2/3 p-2 bg-theme-blue lg:w-1/2"
               src={buy}
               alt="Buy me a coffee!"
             />
