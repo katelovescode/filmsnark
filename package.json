@@ -27,7 +27,7 @@
     "@typescript-eslint/parser": "^8.48.0",
     "autoprefixer": "^10.4.22",
     "dayjs": "^1.11.19",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.2.3",
     "eslint": "^9.18.0",
     "gatsby": "next",
     "gatsby-cli": "^5.15.0",
