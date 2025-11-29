@@ -28,7 +28,7 @@
     "autoprefixer": "^10.4.22",
     "dayjs": "^1.11.19",
     "dotenv": "^17.2.3",
-    "eslint": "^9.18.0",
+    "eslint": "^9.39.1",
     "gatsby": "next",
     "gatsby-cli": "^5.15.0",
     "gatsby-plugin-fontawesome-css": "^1.2.0",
